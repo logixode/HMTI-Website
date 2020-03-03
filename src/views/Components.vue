@@ -1,16 +1,16 @@
 <template>
-    <div>
-        <hero></hero>
-        <basic-elements></basic-elements>
-        <inputs></inputs>
-        <custom-controls></custom-controls>
-        <navigation></navigation>
-        <javascript-components></javascript-components>
-        <icons></icons>
-        <examples></examples>
-        <download-section></download-section>
-        <carousel></carousel>
-    </div>
+  <div>
+    <hero></hero>
+    <basic-elements></basic-elements>
+    <inputs></inputs>
+    <custom-controls></custom-controls>
+    <navigation></navigation>
+    <javascript-components></javascript-components>
+    <icons></icons>
+    <examples></examples>
+    <download-section></download-section>
+    <carousel></carousel>
+  </div>
 </template>
 <script>
 import Hero from "./components/Hero";
@@ -26,6 +26,7 @@ import DownloadSection from "./components/DownloadSection";
 
 export default {
   name: "components",
+
   components: {
     Hero,
     BasicElements,
@@ -37,6 +38,26 @@ export default {
     Icons,
     Examples,
     DownloadSection
+  },
+
+  data() {
+    return {
+      posts: []
+    };
+  },
+
+  created() {
+    this.$http.get("wp/v2/posts").then(
+      response => {
+        for (let post in response) {
+          this.posts.push(response[post]);
+        }
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 };
 </script>
