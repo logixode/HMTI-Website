@@ -1,6 +1,12 @@
 # Website HMTI
 ### Made with Vue.js & Wordpress
 
+#### Project Setup
+1. ```$ npm install ``` 
+2. ```$ npm run serve ``` 
+
+#### Wordpress Admin Page
+``` HMTI-Web/wp-admin```
 <h2 id="table-of-contents">Table of Contents</h2>
 
 <ul>
@@ -44,7 +50,7 @@
 
 <p>Within the download you’ll find the following directories and files:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>argon/
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 |-- HMTI-Web
     |-- App.vue
     |-- main.js
