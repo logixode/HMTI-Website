@@ -11,17 +11,22 @@
         <div class="container py-0 pb-lg">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-5 mb-5 mb-lg-0">
-                    <h1 class="text-white font-weight-light">Bootstrap carousel</h1>
-                    <p class="lead text-white mt-4">Argon Design System comes with four pre-built pages to help you get
-                        started faster. You can change the text and images and you're good to go.</p>
-                    <a href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html"
-                       class="btn btn-white mt-4">See all components</a>
+                    <h1 class="text-white font-weight-light">
+                        HIMPUNAN MAHASISWA
+                        <br />TEKNIK INFORMATIKA
+                    </h1>
+                    <p class="lead text-white mt-4">
+                        Argon Design System comes with four pre-built pages to help you get
+                        started faster. You can change the text and images and you're good to go.
+                    </p>
+                    <a
+                        href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html"
+                        class="btn btn-white mt-4"
+                    >See all components</a>
                 </div>
                 <div class="col-lg-6 mb-lg-auto">
                     <div class="rounded shadow-lg overflow-hidden transform-perspective-right">
-                        <b-carousel id="carousel1"
-                                    controls
-                                    indicators>
+                        <b-carousel id="carousel1" controls indicators>
                             <!-- Text slides with image -->
                             <b-carousel-slide img-src="img/theme/img-1-1200x1000.jpg"></b-carousel-slide>
                             <b-carousel-slide img-src="img/theme/img-2-1200x1000.jpg"></b-carousel-slide>
@@ -37,10 +42,10 @@ import { BCarousel } from "bootstrap-vue/esm/components/carousel/carousel";
 import { BCarouselSlide } from "bootstrap-vue/esm/components/carousel/carousel-slide";
 
 export default {
-  components: {
-    BCarousel,
-    BCarouselSlide
-  }
+    components: {
+        BCarousel,
+        BCarouselSlide
+    }
 };
 </script>
 <style>

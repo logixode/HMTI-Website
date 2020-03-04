@@ -21,8 +21,10 @@ import router from "./router";
 import Argon from "./plugins/argon-kit";
 import './registerServiceWorker'
 import VueResource from 'vue-resource'
+import VueYouTubeEmbed from 'vue-youtube-embed'
 
 Vue.use(VueResource)
+Vue.use(VueYouTubeEmbed)
 
 Vue.http.options.root = 'http://localhost/index.php/wp-json/'
 
