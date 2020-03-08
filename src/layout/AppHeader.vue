@@ -78,8 +78,6 @@
                         href="https://www.facebook.com/creativetim"
                         target="_blank"
                         rel="noopener"
-                        data-toggle="tooltip"
-                        title="Like us on Facebook"
                     >
                         <!-- <i class="fa fa-facebook-square"></i>
                         <span class="nav-link-inner--text d-lg-none">Facebook</span>-->
@@ -92,8 +90,6 @@
                         href="https://www.instagram.com/creativetimofficial"
                         target="_blank"
                         rel="noopener"
-                        data-toggle="tooltip"
-                        title="Follow us on Instagram"
                     >
                         Artikel
                         <!-- <i class="fa fa-instagram"></i>
@@ -106,8 +102,6 @@
                         href="https://twitter.com/creativetim"
                         target="_blank"
                         rel="noopener"
-                        data-toggle="tooltip"
-                        title="Follow us on Twitter"
                     >
                         Kegiatan
                         <!-- <i class="fa fa-twitter-square"></i>
@@ -120,8 +114,6 @@
                         href="https://github.com/creativetimofficial/vue-argon-design-system"
                         target="_blank"
                         rel="noopener"
-                        data-toggle="tooltip"
-                        title="Star us on Github"
                     >
                         Prestasi & Produk
                         <!-- <i class="fa fa-github"></i>
@@ -134,8 +126,6 @@
                         href="https://github.com/creativetimofficial/vue-argon-design-system"
                         target="_blank"
                         rel="noopener"
-                        data-toggle="tooltip"
-                        title="Star us on Github"
                     >
                         Tentang
                         <!-- <i class="fa fa-github"></i>

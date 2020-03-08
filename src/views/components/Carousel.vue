@@ -11,7 +11,7 @@
         <div class="container py-0 pb-lg">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-5 mb-5 mb-lg-0">
-                    <h1 class="text-white">HIMPUNAN MAHASISWA</h1>
+                    <h2 class="text-white font-weight-bold">HIMPUNAN MAHASISWA</h2>
                     <h3 class="text-white">TEKNIK INFORMATIKA</h3>
                     <p
                         class="lead text-white mt-4"
@@ -27,18 +27,16 @@
                             <b-carousel-slide img-src="img/theme/landing.jpg"></b-carousel-slide>
                             <b-carousel-slide img-src="img/theme/profile.jpg"></b-carousel-slide>
                         </b-carousel>-->
-                        <b-carousel id="carousel1">
-                            <!-- Text slides with image -->
-                            <b-carousel-slide img-src="img/theme/landing.jpg">
-                                <youtube
-                                    :video-id="videoProfile"
-                                    class="mx-2"
-                                    player-width="577"
-                                    player-height="371"
-                                ></youtube>
-                            </b-carousel-slide>
-                            <!-- <b-carousel-slide img-src="img/theme/profile.jpg"></b-carousel-slide> -->
-                        </b-carousel>
+                        <video
+                            style="width:100% "
+                            oncontextmenu="return false;"
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                        >
+                            <source src="video/profile.mp4" type="video/mp4" />
+                        </video>
                     </div>
                 </div>
             </div>
@@ -53,14 +51,11 @@ export default {
     components: {
         BCarousel,
         BCarouselSlide
-    },
-
-    data() {
-        return {
-            videoProfile: "W1uvqnk25DQ"
-        };
     }
 };
 </script>
 <style>
+video {
+    margin-bottom: -6px;
+}
 </style>

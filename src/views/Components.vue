@@ -1,16 +1,16 @@
 <template>
     <div>
-        <!-- <hero></hero> -->
-        <!-- <basic-elements></basic-elements> -->
-        <!-- <inputs></inputs> -->
-        <!-- <custom-controls></custom-controls> -->
-        <!-- <navigation></navigation> -->
-        <!-- <javascript-components></javascript-components> -->
-        <!-- <icons></icons> -->
-        <!-- <examples></examples> -->
-        <!-- <download-section></download-section> -->
         <carousel></carousel>
         <youtube-embed :videoId1="url1" :videoId2="url2" :videoId3="url3"></youtube-embed>
+        <!-- <hero></hero> -->
+        <basic-elements></basic-elements>
+        <inputs></inputs>
+        <custom-controls></custom-controls>
+        <navigation></navigation>
+        <javascript-components></javascript-components>
+        <icons></icons>
+        <!-- <examples></examples> -->
+        <download-section></download-section>
     </div>
 </template>
 <script>
