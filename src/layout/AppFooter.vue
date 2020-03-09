@@ -243,7 +243,7 @@
                             </a>
                             <br />
                             <a target="_blank" rel="noopener" href="#">
-                                <button class="btn btn-neutral btn-youtube btn-round w-50">
+                                <button class="btn btn-neutral btn-youtube btn-round w-50 my-2">
                                     <i class="fa fa-youtube">&nbsp;</i> tipoliwangi
                                 </button>
                             </a>
