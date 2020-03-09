@@ -9,6 +9,7 @@ import Register from "./views/Register.vue";
 import Profile from "./views/Profile.vue";
 import Artikel from "./views/Artikel.vue"
 import Kegiatan from "./views/Kegiatan.vue"
+import ArtikelPage from "./views/ArtikelPage.vue"
 
 Vue.use(Router);
 
@@ -84,6 +85,15 @@ export default new Router({
             components: {
                 header: AppHeader,
                 default: Profile,
+                footer: AppFooter
+            }
+        },
+        {
+            path: "/artikel/:id/",
+            name: "artikel-page",
+            components: {
+                header: AppHeader,
+                default: ArtikelPage,
                 footer: AppFooter
             }
         }

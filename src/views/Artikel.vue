@@ -9,10 +9,12 @@
                             <h2>Artikel</h2>
                         </div>
                         <div class="mt-3 py-3 border-top">
-                            <div class="artikel" v-for="post in posts[5]">
-                                <h4>{{ post.title.rendered }}</h4>
-                                <h6>{{ Date(Date.parse(post.date, month)) }}</h6>
-                                <p v-html="post.content.rendered"></p>
+                            <div class="artikel" :key="key" v-for="(post, key) in posts[5]">
+                                <router-link :to="`${post.id}`">
+                                    <h4>{{ post.title.rendered }}</h4>
+                                    <h6>{{ Date(Date.parse(post.date)) }}</h6>
+                                    <p v-html="post.content.rendered"></p>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -34,7 +36,7 @@ export default {
         };
     },
     created() {
-        this.$http.get("wp/v2/posts").then(
+        this.$http.get("wp/v2/posts?categories=1").then(
             response => {
                 for (let post in response) {
                     this.posts.push(response[post]);

@@ -22,10 +22,10 @@ import Argon from "./plugins/argon-kit";
 import './registerServiceWorker'
 import VueResource from 'vue-resource'
 import VueYouTubeEmbed from 'vue-youtube-embed'
+// import axios from 'axios'
 
-Vue.use(VueResource)
-Vue.use(VueYouTubeEmbed)
-
+Vue.use(VueResource, VueYouTubeEmbed)
+// Vue.prototype.$http = axios
 Vue.http.options.root = 'http://localhost/index.php/wp-json/'
 
 Vue.config.productionTip = false;

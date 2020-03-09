@@ -177,7 +177,7 @@
                 </div>
             </div>
         </section>-->
-        <div class="container">
+        <!-- <div class="container">
             <div class="row justify-content-between row-grid align-items-center my-md">
                 <div class="col-lg-8">
                     <h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
@@ -216,7 +216,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <div class="gradient-bar mt-5"></div>
         <div class="top-footer-dark text-white">
@@ -237,13 +237,13 @@
                         <h6 class="font-weight-bold pb-3 text-white text-uppercase">Find Us at</h6>
                         <div class="btn-wrapper">
                             <a target="_blank" rel="noopener" href="#">
-                                <button class="btn btn-neutral btn-instagram btn-round w-50">
+                                <button class="btn btn-neutral btn-instagram btn-round">
                                     <i class="fa fa-instagram"></i> @tipoliwangi
                                 </button>
                             </a>
-                            <br />
+                            <!-- <br /> -->
                             <a target="_blank" rel="noopener" href="#">
-                                <button class="btn btn-neutral btn-youtube btn-round w-50 my-2">
+                                <button class="btn btn-neutral btn-youtube btn-round ml-2">
                                     <i class="fa fa-youtube">&nbsp;</i> tipoliwangi
                                 </button>
                             </a>
@@ -341,11 +341,11 @@ footer {
     text-transform: none !important;
 }
 
-a {
+footer a {
     color: #bbb !important;
 }
 
-a:hover {
+footer a:hover {
     color: #888888 !important;
 }
 </style>
