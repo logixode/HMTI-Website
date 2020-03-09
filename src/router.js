@@ -7,63 +7,92 @@ import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
 import Register from "./views/Register.vue";
 import Profile from "./views/Profile.vue";
+import Artikel from "./views/Artikel.vue"
+import Kegiatan from "./views/Kegiatan.vue"
 
 Vue.use(Router);
 
 export default new Router({
-  linkExactActiveClass: "active",
-  routes: [
-    {
-      path: "/",
-      name: "components",
-      components: {
-        header: AppHeader,
-        default: Components,
-        footer: AppFooter
-      }
-    },
-    {
-      path: "/landing",
-      name: "landing",
-      components: {
-        header: AppHeader,
-        default: Landing,
-        footer: AppFooter
-      }
-    },
-    {
-      path: "/login",
-      name: "login",
-      components: {
-        header: AppHeader,
-        default: Login,
-        footer: AppFooter
-      }
-    },
-    {
-      path: "/register",
-      name: "register",
-      components: {
-        header: AppHeader,
-        default: Register,
-        footer: AppFooter
-      }
-    },
-    {
-      path: "/profile",
-      name: "profile",
-      components: {
-        header: AppHeader,
-        default: Profile,
-        footer: AppFooter
-      }
+    linkExactActiveClass: "active",
+    routes: [
+        {
+            path: "/",
+            name: "components",
+            components: {
+                header: AppHeader,
+                default: Components,
+                footer: AppFooter
+            }
+        },
+        {
+            path: "/landing",
+            name: "landing",
+            components: {
+                header: AppHeader,
+                default: Landing,
+                footer: AppFooter
+            }
+        },
+        {
+            path: "/login",
+            name: "login",
+            components: {
+                header: AppHeader,
+                default: Login,
+                footer: AppFooter
+            }
+        },
+        {
+            path: "/register",
+            name: "register",
+            components: {
+                header: AppHeader,
+                default: Register,
+                footer: AppFooter
+            }
+        },
+        {
+            path: "/tentang",
+            name: "tentang",
+            components: {
+                header: AppHeader,
+                default: Profile,
+                footer: AppFooter
+            }
+        },
+        {
+            path: "/artikel",
+            name: "artikel",
+            components: {
+                header: AppHeader,
+                default: Artikel,
+                footer: AppFooter
+            }
+        },
+        {
+            path: "/kegiatan",
+            name: "kegiatan",
+            components: {
+                header: AppHeader,
+                default: Kegiatan,
+                footer: AppFooter
+            }
+        },
+        {
+            path: "/prestasi",
+            name: "prestasi",
+            components: {
+                header: AppHeader,
+                default: Profile,
+                footer: AppFooter
+            }
+        }
+    ],
+    scrollBehavior: to => {
+        if (to.hash) {
+            return { selector: to.hash };
+        } else {
+            return { x: 0, y: 0 };
+        }
     }
-  ],
-  scrollBehavior: to => {
-    if (to.hash) {
-      return { selector: to.hash };
-    } else {
-      return { x: 0, y: 0 };
-    }
-  }
 });

@@ -73,64 +73,49 @@
             </ul>-->
             <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                 <li class="nav-item">
-                    <a
-                        class="nav-link nav-link-icon"
-                        href="https://www.facebook.com/creativetim"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <!-- <i class="fa fa-facebook-square"></i>
-                        <span class="nav-link-inner--text d-lg-none">Facebook</span>-->
-                        Beranda
-                    </a>
+                    <router-link slot="brand" to="/">
+                        <a class="nav-link nav-link-icon" rel="noopener">
+                            <!-- <i class="fa fa-facebook-square"></i>
+                            <span class="nav-link-inner--text d-lg-none">Facebook</span>-->
+                            Beranda
+                        </a>
+                    </router-link>
                 </li>
                 <li class="nav-item">
-                    <a
-                        class="nav-link nav-link-icon"
-                        href="https://www.instagram.com/creativetimofficial"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        Artikel
-                        <!-- <i class="fa fa-instagram"></i>
-                        <span class="nav-link-inner--text d-lg-none">Instagram</span>-->
-                    </a>
+                    <router-link slot="brand" to="/artikel">
+                        <a class="nav-link nav-link-icon" rel="noopener">
+                            Artikel
+                            <!-- <i class="fa fa-instagram"></i>
+                            <span class="nav-link-inner--text d-lg-none">Instagram</span>-->
+                        </a>
+                    </router-link>
                 </li>
                 <li class="nav-item">
-                    <a
-                        class="nav-link nav-link-icon"
-                        href="https://twitter.com/creativetim"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        Kegiatan
-                        <!-- <i class="fa fa-twitter-square"></i>
-                        <span class="nav-link-inner--text d-lg-none">Twitter</span>-->
-                    </a>
+                    <router-link slot="brand" to="/kegiatan">
+                        <a class="nav-link nav-link-icon" rel="noopener">
+                            Kegiatan
+                            <!-- <i class="fa fa-twitter-square"></i>
+                            <span class="nav-link-inner--text d-lg-none">Twitter</span>-->
+                        </a>
+                    </router-link>
                 </li>
                 <li class="nav-item">
-                    <a
-                        class="nav-link nav-link-icon"
-                        href="https://github.com/creativetimofficial/vue-argon-design-system"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        Prestasi & Produk
-                        <!-- <i class="fa fa-github"></i>
-                        <span class="nav-link-inner--text d-lg-none">Github</span>-->
-                    </a>
+                    <router-link slot="brand" to="/prestasi">
+                        <a class="nav-link nav-link-icon" rel="noopener">
+                            Prestasi & Produk
+                            <!-- <i class="fa fa-github"></i>
+                            <span class="nav-link-inner--text d-lg-none">Github</span>-->
+                        </a>
+                    </router-link>
                 </li>
                 <li class="nav-item">
-                    <a
-                        class="nav-link nav-link-icon"
-                        href="https://github.com/creativetimofficial/vue-argon-design-system"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        Tentang
-                        <!-- <i class="fa fa-github"></i>
-                        <span class="nav-link-inner--text d-lg-none">Github</span>-->
-                    </a>
+                    <router-link slot="brand" to="/tentang">
+                        <a class="nav-link nav-link-icon" rel="noopener">
+                            Tentang
+                            <!-- <i class="fa fa-github"></i>
+                            <span class="nav-link-inner--text d-lg-none">Github</span>-->
+                        </a>
+                    </router-link>
                 </li>
                 <!-- <li class="nav-item d-none d-lg-block ml-lg-4">
           <a

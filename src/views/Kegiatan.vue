@@ -1,0 +1,40 @@
+<template>
+    <div class="profile-page">
+        <components-header></components-header>
+        <section class="section section-skew mt--150">
+            <div class="container">
+                <card shadow class="card-profile mt--400" no-body>
+                    <div class="px-5">
+                        <coming-soon class="mt-4"></coming-soon>
+                    </div>
+                </card>
+                <card shadow class="card-profile mt-3" no-body>
+                    <div class="px-5">
+                        <div class="text-center mt-4">
+                            <h2>Kegiatan Terlaksana</h2>
+                        </div>
+                        <kegiatan-terlaksana></kegiatan-terlaksana>
+                    </div>
+                </card>
+            </div>
+        </section>
+    </div>
+</template>
+<script>
+import ComponentsHeader from "./components/ComponentsHeader";
+import ComingSoon from "./components/ComingSoon";
+import KegiatanTerlaksana from "./components/KegiatanTerlaksana";
+
+export default {
+    components: {
+        ComponentsHeader,
+        ComingSoon,
+        KegiatanTerlaksana
+    }
+};
+</script>
+<style>
+img {
+    max-width: 700px;
+}
+</style>

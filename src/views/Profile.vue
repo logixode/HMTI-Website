@@ -1,19 +1,9 @@
 <template>
     <div class="profile-page">
-        <section class="section-profile-cover section-shaped my-0">
-            <div class="shape shape-style-1 shape-primary shape-skew alpha-4">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </section>
+        <components-header></components-header>
         <section class="section section-skew">
             <div class="container">
-                <card shadow class="card-profile mt--300" no-body>
+                <card shadow class="card-profile mt--500" no-body>
                     <div class="px-4">
                         <div class="row justify-content-center">
                             <div class="col-lg-3 order-lg-2">
@@ -72,6 +62,8 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-9">
                                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque tempora maiores incidunt commodi nisi? Magni ipsum sequi, quo consequatur corporis laboriosam labore minus voluptas quas atque facere a tempore dolores dolorem molestiae ipsam eligendi. Repellat aspernatur dolorum odit vitae tempora tempore qui ab eveniet, debitis temporibus quod voluptates voluptatem, illum magnam similique cumque natus nesciunt officiis? Nobis velit possimus nostrum beatae earum libero reiciendis ducimus laboriosam consectetur quos dignissimos dicta quaerat, enim provident. Consectetur deleniti sit, ad esse odio velit ratione quod tenetur corporis, ut asperiores nihil qui, eveniet obcaecati?</p>
+
+                                    <img src="img/struktur.png" alt />
                                     <!-- <a href="#">Show more</a> -->
                                 </div>
                             </div>
@@ -83,7 +75,15 @@
     </div>
 </template>
 <script>
-export default {};
+import ComponentsHeader from "./components/ComponentsHeader";
+export default {
+    components: {
+        ComponentsHeader
+    }
+};
 </script>
 <style>
+img {
+    max-width: 700px;
+}
 </style>

@@ -1,6 +1,11 @@
 <template>
     <div>
-        <carousel></carousel>
+        <main-index></main-index>
+        <div class="container mb-5"></div>
+
+        <visi-misi></visi-misi>
+        <prestasi></prestasi>
+        <coming-soon class="container"></coming-soon>
         <youtube-embed :videoId1="url1" :videoId2="url2" :videoId3="url3"></youtube-embed>
         <!-- <hero></hero> -->
         <basic-elements></basic-elements>
@@ -20,11 +25,14 @@ import Inputs from "./components/Inputs";
 import CustomControls from "./components/CustomControls";
 import Navigation from "./components/Navigation";
 import JavascriptComponents from "./components/JavascriptComponents";
-import Carousel from "./components/Carousel";
+import MainIndex from "./components/MainIndex";
 import Icons from "./components/Icons";
 import Examples from "./components/Examples";
 import DownloadSection from "./components/DownloadSection";
 import YoutubeEmbed from "./components/YoutubeEmbed";
+import VisiMisi from "./components/VisiMisi";
+import Prestasi from "./components/Prestasi";
+import ComingSoon from "./components/ComingSoon";
 
 export default {
     name: "components",
@@ -36,34 +44,22 @@ export default {
         CustomControls,
         Navigation,
         JavascriptComponents,
-        Carousel,
+        MainIndex,
         Icons,
         Examples,
         DownloadSection,
-        YoutubeEmbed
+        YoutubeEmbed,
+        VisiMisi,
+        Prestasi,
+        ComingSoon
     },
 
     data() {
         return {
-            posts: [],
             url1: "M7lc1UVf-VE",
             url2: "VPSoNx1gyQ4",
             url3: "M7lc1UVf-VE"
         };
-    },
-
-    created() {
-        this.$http.get("wp/v2/posts").then(
-            response => {
-                for (let post in response) {
-                    this.posts.push(response[post]);
-                }
-                console.log(response);
-            },
-            error => {
-                console.log(error);
-            }
-        );
     }
 };
 </script>

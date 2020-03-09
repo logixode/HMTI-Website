@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <section class="d-flex justify-content-center">
-            <youtube :video-id="videoId1" player-width="360" player-height="230" class="mx-2"></youtube>
-            <youtube :video-id="videoId2" player-width="360" player-height="230" class="mx-2"></youtube>
-            <youtube :video-id="videoId3" player-width="360" player-height="230" class="mx-2"></youtube>
+    <div class="container">
+        <section class="d-flex justify-content-between">
+            <youtube :video-id="videoId1" player-width="325" player-height="182"></youtube>
+            <youtube :video-id="videoId2" player-width="325" player-height="182"></youtube>
+            <youtube :video-id="videoId3" player-width="325" player-height="182"></youtube>
         </section>
     </div>
 </template>
