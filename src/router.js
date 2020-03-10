@@ -92,7 +92,7 @@ export default new Router({
             path: "/artikel/:id/",
             name: "artikel-page",
             components: {
-                // header: AppHeader,
+                header: AppHeader,
                 default: ArtikelPage,
                 footer: AppFooter
             }
