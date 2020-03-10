@@ -16,10 +16,11 @@
                     <p
                         class="lead text-white mt-4"
                     >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut nam nesciunt error beatae! Odio rerum illo dolorum iusto excepturi nemo fugiat mollitia?</p>
-                    <a
-                        href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html"
+                    <router-link
+                        to="tentang"
                         class="btn btn-white mt-4 text-uppercase px-5"
-                    >Lihat Profile</a>
+                    >Lihat Profile</router-link>
+                    <!-- <a href="#" class="btn btn-white mt-4 text-uppercase px-5">Lihat Profile</a> -->
                 </div>
                 <div class="col-lg-7 mb-lg-auto">
                     <div class="rounded shadow-lg overflow-hidden transform-perspective-right">

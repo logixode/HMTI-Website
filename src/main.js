@@ -24,12 +24,13 @@ import VueResource from 'vue-resource'
 import VueYouTubeEmbed from 'vue-youtube-embed'
 // import axios from 'axios'
 
-Vue.use(VueResource, VueYouTubeEmbed)
+Vue.use(VueResource)
+Vue.use(VueYouTubeEmbed)
+Vue.use(Argon);
 // Vue.prototype.$http = axios
 Vue.http.options.root = 'http://localhost/index.php/wp-json/'
 
 Vue.config.productionTip = false;
-Vue.use(Argon);
 new Vue({
     router,
     render: h => h(App)

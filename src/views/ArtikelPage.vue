@@ -11,7 +11,7 @@
                         <div class="mt-3 py-3 border-top" v-if="!error.length">
                             <h4>{{ posts[5].title.rendered }}</h4>
                             <h6>{{ Date(Date.parse(posts[5].date)) }}</h6>
-                            <p v-html="posts[5].content.rendered"></p>
+                            <div class="text-gray" v-html="posts[5].content.rendered"></div>
                             <!-- <div class="artikel" :key="key" v-for="(post, key) in posts[5]">
                                 <h4>{{ post.title.rendered }}</h4>
                                 <h6>{{ Date(Date.parse(post.date)) }}</h6>
