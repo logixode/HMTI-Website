@@ -22,13 +22,16 @@ import Argon from "./plugins/argon-kit";
 import './registerServiceWorker'
 import VueResource from 'vue-resource'
 import VueYouTubeEmbed from 'vue-youtube-embed'
-// import axios from 'axios'
+import axios from 'axios'
+import Axios from "axios";
 
 Vue.use(VueResource)
 Vue.use(VueYouTubeEmbed)
 Vue.use(Argon);
+Vue.use(axios);
 // Vue.prototype.$http = axios
-Vue.http.options.root = 'http://localhost/index.php/wp-json/'
+axios.defaults.baseURL = 'http://localhost/index.php/wp-json/'
+// Vue.http.options.root = 'http://localhost/index.php/wp-json/'
 
 Vue.config.productionTip = false;
 new Vue({

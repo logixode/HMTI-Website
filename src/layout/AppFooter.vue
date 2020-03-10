@@ -1,224 +1,6 @@
 <template>
     <footer class="footer">
-        <!-- <section class="section section-lg">
-            <div class="container">
-                <div class="row justify-content-center text-center mb-lg">
-                    <div class="col-lg-8">
-                        <h3>- The amazing Team -</h3>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="row col-11">
-                        <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-                            <div class="px-2">
-                                <img
-                                    v-lazy="'img/theme/team-1-800x800.jpg'"
-                                    class="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                                    style="width: 200px;"
-                                />
-                                <div class="pt-4 text-center">
-                                    <h5 class="title">
-                                        <span class="d-block mb-1">Ryan Tompson</span>
-                                        <small class="h6 text-muted">Web Developer</small>
-                                    </h5>
-                                    <div class="mt-3">
-                                        <base-button
-                                            tag="a"
-                                            href="#"
-                                            type="warning"
-                                            icon="fa fa-twitter"
-                                            rounded
-                                            icon-only
-                                        ></base-button>
-                                        <base-button
-                                            tag="a"
-                                            href="#"
-                                            type="warning"
-                                            icon="fa fa-facebook"
-                                            rounded
-                                            icon-only
-                                        ></base-button>
-                                        <base-button
-                                            tag="a"
-                                            href="#"
-                                            type="warning"
-                                            icon="fa fa-dribbble"
-                                            rounded
-                                            icon-only
-                                        ></base-button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-                            <div class="px-2">
-                                <img
-                                    v-lazy="'img/theme/team-2-800x800.jpg'"
-                                    class="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                                    style="width: 200px;"
-                                />
-                                <div class="pt-4 text-center">
-                                    <h5 class="title">
-                                        <span class="d-block mb-1">Romina Hadid</span>
-                                        <small class="h6 text-muted">Marketing Strategist</small>
-                                    </h5>
-                                    <div class="mt-3">
-                                        <base-button
-                                            tag="a"
-                                            href="#"
-                                            type="primary"
-                                            icon="fa fa-twitter"
-                                            rounded
-                                            icon-only
-                                        ></base-button>
-                                        <base-button
-                                            tag="a"
-                                            href="#"
-                                            type="primary"
-                                            icon="fa fa-facebook"
-                                            rounded
-                                            icon-only
-                                        ></base-button>
-                                        <base-button
-                                            tag="a"
-                                            href="#"
-                                            type="primary"
-                                            icon="fa fa-dribbble"
-                                            rounded
-                                            icon-only
-                                        ></base-button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-                            <div class="px-2">
-                                <img
-                                    v-lazy="'img/theme/team-3-800x800.jpg'"
-                                    class="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                                    style="width: 200px;"
-                                />
-                                <div class="pt-4 text-center">
-                                    <h5 class="title">
-                                        <span class="d-block mb-1">Alexander Smith</span>
-                                        <small class="h6 text-muted">UI/UX Designer</small>
-                                    </h5>
-                                    <div class="mt-3">
-                                        <base-button
-                                            tag="a"
-                                            href="#"
-                                            type="info"
-                                            icon="fa fa-twitter"
-                                            rounded
-                                            icon-only
-                                        ></base-button>
-                                        <base-button
-                                            tag="a"
-                                            href="#"
-                                            type="info"
-                                            icon="fa fa-facebook"
-                                            rounded
-                                            icon-only
-                                        ></base-button>
-                                        <base-button
-                                            tag="a"
-                                            href="#"
-                                            type="info"
-                                            icon="fa fa-dribbble"
-                                            rounded
-                                            icon-only
-                                        ></base-button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-                            <div class="px-2">
-                                <img
-                                    v-lazy="'img/theme/team-4-800x800.jpg'"
-                                    class="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                                    style="width: 200px;"
-                                />
-                                <div class="pt-4 text-center">
-                                    <h5 class="title">
-                                        <span class="d-block mb-1">John Doe</span>
-                                        <small class="h6 text-muted">Founder and CEO</small>
-                                    </h5>
-                                    <div class="mt-3">
-                                        <base-button
-                                            tag="a"
-                                            href="#"
-                                            type="success"
-                                            icon="fa fa-twitter"
-                                            rounded
-                                            icon-only
-                                        ></base-button>
-                                        <base-button
-                                            tag="a"
-                                            href="#"
-                                            type="success"
-                                            icon="fa fa-facebook"
-                                            rounded
-                                            icon-only
-                                        ></base-button>
-                                        <base-button
-                                            tag="a"
-                                            href="#"
-                                            type="success"
-                                            icon="fa fa-dribbble"
-                                            rounded
-                                            icon-only
-                                        ></base-button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>-->
-        <!-- <div class="container">
-            <div class="row justify-content-between row-grid align-items-center my-md">
-                <div class="col-lg-8">
-                    <h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
-                    <h4 class="mb-0 font-weight-light">Let's get in touch on any of these platforms.</h4>
-                </div>
-                <div class="col-lg-4 text-lg-right btn-wrapper">
-                    <a
-                        target="_blank"
-                        rel="noopener"
-                        href="#"
-                        class="btn btn-neutral btn-icon-only btn-instagram btn-round btn-lg"
-                        data-toggle="tooltip"
-                        data-original-title="Follow us"
-                    >
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                    <a
-                        target="_blank"
-                        rel="noopener"
-                        href="#"
-                        class="btn btn-neutral btn-icon-only btn-youtube btn-round btn-lg"
-                        data-toggle="tooltip"
-                        data-original-title="Like us"
-                    >
-                        <i class="fa fa-youtube"></i>
-                    </a>
-                    <a
-                        target="_blank"
-                        rel="noopener"
-                        href="#"
-                        class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg"
-                        data-toggle="tooltip"
-                        data-original-title="Star on Github"
-                    >
-                        <i class="fa fa-github"></i>
-                    </a>
-                </div>
-            </div>
-        </div>-->
-
-        <div class="gradient-bar mt-5"></div>
+        <!-- <div class="gradient-bar mt-5"></div>
         <div class="top-footer-dark text-white">
             <div class="py-5 container">
                 <div class="row">
@@ -241,7 +23,7 @@
                                     <i class="fa fa-instagram"></i> @tipoliwangi
                                 </button>
                             </a>
-                            <!-- <br /> -->
+                            <br />
                             <a target="_blank" rel="noopener" href="#">
                                 <button class="btn btn-neutral btn-youtube btn-round ml-2">
                                     <i class="fa fa-youtube">&nbsp;</i> tipoliwangi
@@ -251,7 +33,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- / Contact Us -->
 
         <!-- <hr /> -->
@@ -323,13 +105,19 @@ export default {
 <style>
 footer {
     padding-bottom: 0 !important;
+    -webkit-transition: all 0.15s ease !important;
+    transition: all 0.15s ease !important;
 }
 
 .footer-dark {
     background-color: #202020;
+    -webkit-transition: all 0.15s ease !important;
+    transition: all 0.15s ease !important;
 }
 .top-footer-dark {
     background-color: #272727;
+    -webkit-transition: all 0.15s ease !important;
+    transition: all 0.15s ease !important;
 }
 
 .gradient-bar {
