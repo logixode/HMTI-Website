@@ -52,9 +52,6 @@ export default {
 };
 </script>
 <style>
-.post-title {
-    letter-spacing: 5px;
-}
 .text-gray {
     color: #525252;
 }

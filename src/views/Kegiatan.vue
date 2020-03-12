@@ -2,14 +2,13 @@
     <div class="profile-page">
         <components-header></components-header>
         <section class="section section-skew mt--400">
-            <div class="text-center mt--150 text-uppercase">
+            <!-- <div class="text-center mt--150 text-uppercase">
                 <h2 class="text-white post-title">Kegiatan Terlaksana</h2>
-            </div>
+            </div>-->
+            <coming-soon class="mt--200"></coming-soon>
             <div class="container mt-5">
                 <card shadow class="card-profile" no-body>
-                    <div class="px-5">
-                        <coming-soon class="mt-4"></coming-soon>
-                    </div>
+                    <div class="px-5"></div>
                 </card>
                 <card shadow class="card-profile mt-3" no-body>
                     <div class="px-5">
