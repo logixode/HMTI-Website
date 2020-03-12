@@ -1,22 +1,22 @@
 <template>
     <div class="profile-page">
         <components-header></components-header>
-        <section class="section section-skew mt--150">
-            <div class="container">
-                <card shadow class="card-profile mt--400" no-body>
-                    <div class="px-5">
-                        <div class="text-center mt-4">
-                            <h2>Artikel</h2>
-                        </div>
-                        <div class="mt-3 py-3 border-top">
-                            <div class="artikel" :key="post.id" v-for="post in posts">
-                                <router-link :to="`/artikel/${post.id}`">
-                                    <h4>{{ post.title.rendered }}</h4>
-                                    <h6>{{ Date(Date.parse(post.date)) }}</h6>
-                                    <div class="text-gray" v-html="post.content.rendered"></div>
-                                </router-link>
-                            </div>
-                        </div>
+        <section class="section section-skew mt--400">
+            <div class="text-center mt--150 text-uppercase">
+                <h2 class="text-white post-title">Artikel</h2>
+            </div>
+            <div class="container mt-5">
+                <card shadow class="card-profile my-2" no-body :key="post.id" v-for="post in posts">
+                    <div class="px-5 pt-4 pb-2">
+                        <!-- <div class="mt-3 py-3 border-top"> -->
+                        <!-- <div class="artikel" > -->
+                        <router-link :to="`/artikel/${post.id}`">
+                            <h4>{{ post.title.rendered }}</h4>
+                            <h6>{{ Date(Date.parse(post.date)) }}</h6>
+                            <div class="text-gray" v-html="post.content.rendered"></div>
+                        </router-link>
+                        <!-- </div> -->
+                        <!-- </div> -->
                     </div>
                 </card>
             </div>
@@ -52,6 +52,9 @@ export default {
 };
 </script>
 <style>
+.post-title {
+    letter-spacing: 5px;
+}
 .text-gray {
     color: #525252;
 }

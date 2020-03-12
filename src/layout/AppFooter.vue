@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-        <!-- <div class="gradient-bar mt-5"></div>
+        <div class="gradient-bar mt-5"></div>
         <div class="top-footer-dark text-white">
             <div class="py-5 container">
                 <div class="row">
@@ -23,7 +23,6 @@
                                     <i class="fa fa-instagram"></i> @tipoliwangi
                                 </button>
                             </a>
-                            <br />
                             <a target="_blank" rel="noopener" href="#">
                                 <button class="btn btn-neutral btn-youtube btn-round ml-2">
                                     <i class="fa fa-youtube">&nbsp;</i> tipoliwangi
@@ -33,7 +32,7 @@
                     </div>
                 </div>
             </div>
-        </div>-->
+        </div>
         <!-- / Contact Us -->
 
         <!-- <hr /> -->
