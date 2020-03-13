@@ -64,6 +64,9 @@ export default {
 };
 </script>
 <style>
+.text-unset {
+    text-transform: unset !important;
+}
 .post-title {
     letter-spacing: 5px;
 }
@@ -73,5 +76,6 @@ export default {
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+    margin-bottom: 5px !important;
 }
 </style>

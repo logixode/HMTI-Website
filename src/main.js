@@ -23,7 +23,6 @@ import './registerServiceWorker'
 import VueResource from 'vue-resource'
 import VueYouTubeEmbed from 'vue-youtube-embed'
 import axios from 'axios'
-import Axios from "axios";
 
 Vue.use(VueResource)
 Vue.use(VueYouTubeEmbed)

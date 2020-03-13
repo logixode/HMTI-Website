@@ -34,7 +34,7 @@ export default {
     },
     data() {
         return {
-            loading: false,
+            loading: true,
             posts: [],
             error: null,
             id: this.$route.params.id
@@ -52,7 +52,7 @@ export default {
         async getData(id) {
             this.error = null;
             this.posts = [];
-            this.loading = true;
+            // this.loading = true;
             await axios
                 .get(`wp/v2/posts/${id}/`)
                 .then(response => {

@@ -117,18 +117,36 @@
                         </a>
                     </router-link>
                 </li>
+
+                <li class="nav-item">
+                    <router-link slot="brand" to="/tentang">
+                        <a class="nav-link nav-link-icon" rel="noopener">
+                            <i class="fa fa-instagram"></i>
+                            <span class="nav-link-inner--text d-lg-none">Github</span>
+                        </a>
+                    </router-link>
+                </li>
+
+                <li class="nav-item">
+                    <router-link slot="brand" to="/tentang">
+                        <a class="nav-link nav-link-icon" rel="noopener">
+                            <i class="fa fa-youtube"></i>
+                            <span class="nav-link-inner--text d-lg-none">Github</span>
+                        </a>
+                    </router-link>
+                </li>
                 <!-- <li class="nav-item d-none d-lg-block ml-lg-4">
-          <a
-            href="https://www.creative-tim.com/product/vue-argon-design-system"
-            target="_blank"
-            rel="noopener"
-            class="btn btn-neutral btn-icon"
-          >
-            <span class="btn-inner--icon">
-              <i class="fa fa-cloud-download mr-2"></i>
-            </span>
-            <span class="nav-link-inner--text">Download</span>
-          </a>
+                    <a
+                        href="https://www.creative-tim.com/product/vue-argon-design-system"
+                        target="_blank"
+                        rel="noopener"
+                        class="btn btn-neutral btn-icon"
+                    >
+                        <span class="btn-inner--icon">
+                            <i class="fa fa-cloud-download mr-2"></i>
+                        </span>
+                        <span class="nav-link-inner--text">Download</span>
+                    </a>
                 </li>-->
             </ul>
         </base-nav>

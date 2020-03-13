@@ -1,13 +1,13 @@
 <template>
     <section class="section section section-shaped my-0 overflow-hidden">
-        <!-- <div class="shape shape-style-1 bg-gradient-warning shape-skew">
+        <div class="shape shape-style-1 bg-gradient-warning shape-skew">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-        </div>-->
+        </div>
         <div class="container py-0">
             <div class="row align-items-center">
                 <div class="col-md-6 order-lg-2 ml-lg-auto">
