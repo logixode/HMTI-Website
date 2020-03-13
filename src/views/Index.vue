@@ -5,7 +5,17 @@
 
         <visi-misi></visi-misi>
         <prestasi></prestasi>
-        <coming-soon></coming-soon>
+        <section class="section section section-shaped my-0 overflow-hidden">
+            <div class="shape shape-style-1 bg-gradient-warning shape-skew">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <coming-soon></coming-soon>
+        </section>
         <youtube-embed :videoId1="url1" :videoId2="url2" :videoId3="url3"></youtube-embed>
         <!-- <hero></hero> -->
         <!-- <basic-elements></basic-elements>

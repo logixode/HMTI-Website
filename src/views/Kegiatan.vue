@@ -5,7 +5,7 @@
             <!-- <div class="text-center mt--150 text-uppercase">
                 <h2 class="text-white post-title">Kegiatan Terlaksana</h2>
             </div>-->
-            <coming-soon class="mt--200"></coming-soon>
+            <coming-soon class="mt--150"></coming-soon>
             <div class="container mt-5">
                 <card shadow class="card-profile" no-body>
                     <div class="px-5"></div>

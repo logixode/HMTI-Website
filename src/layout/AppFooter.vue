@@ -7,8 +7,8 @@
                     <div class="col-md-8 pr-1">
                         <h6 class="font-weight-bold pb-3 text-white text-uppercase">Contact us</h6>
                         <div class="text-secondary">
-                            <p class="font-weight-bold">Himpunan Mahasiswa Teknik Informatika</p>
-                            <p>Kecamatan Kabat, Kabupaten Banyuwangi</p>
+                            <p class="mb-1 font-weight-bold">Himpunan Mahasiswa Teknik Informatika</p>
+                            <p class="mb-1">Kecamatan Kabat, Kabupaten Banyuwangi</p>
 
                             <i class="fa fa-envelope">&nbsp;</i>
                             <a href="mailto:hmti@poliwangi.ac.id">hmti@poliwangi.ac.id</a>

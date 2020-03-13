@@ -118,7 +118,7 @@
                     </router-link>
                 </li>
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <router-link slot="brand" to="/tentang">
                         <a class="nav-link nav-link-icon" rel="noopener">
                             <i class="fa fa-instagram"></i>
@@ -134,7 +134,7 @@
                             <span class="nav-link-inner--text d-lg-none">Github</span>
                         </a>
                     </router-link>
-                </li>
+                </li>-->
                 <!-- <li class="nav-item d-none d-lg-block ml-lg-4">
                     <a
                         href="https://www.creative-tim.com/product/vue-argon-design-system"

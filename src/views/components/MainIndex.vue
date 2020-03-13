@@ -8,7 +8,7 @@
             <span></span>
             <span></span>
         </div>
-        <div class="container py-0 pb-lg">
+        <div class="container py-5 pb-lg">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-5 mb-5 mb-lg-0">
                     <h2 class="text-white font-weight-bold">HIMPUNAN MAHASISWA</h2>
