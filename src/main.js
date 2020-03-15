@@ -28,8 +28,41 @@ Vue.use(VueResource)
 Vue.use(VueYouTubeEmbed)
 Vue.use(Argon);
 Vue.use(axios);
-// Vue.prototype.$http = axios
+
 axios.defaults.baseURL = 'http://localhost/index.php/wp-json/'
+
+Vue.mixin({
+    methods: {
+        getFullDate (day, date, month, year) {
+            const months = [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            ];
+            const days = [
+                "Minggu",
+                "Senin",
+                "Selasa",
+                "Rabu",
+                "Kamis",
+                "Jum'at",
+                "sabtu"
+            ];
+
+            return days[day] + ", " + date + " " + months[month] + " " + year;
+        }
+    }
+})
+// Vue.prototype.$http = axios
 // Vue.http.options.root = 'http://localhost/index.php/wp-json/'
 
 Vue.config.productionTip = false;

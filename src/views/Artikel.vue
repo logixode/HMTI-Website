@@ -36,7 +36,7 @@
                     :key="index"
                     v-for="(post, index) in posts"
                 >
-                    <div class="pl-3 pr-5 pt-4 pb-4">
+                    <div class="px-4 py-4">
                         <!-- <div class="mt-3 py-3 border-top"> -->
                         <!-- <div class="artikel" > -->
 
@@ -85,6 +85,7 @@
 import ComponentsHeader from "./components/ComponentsHeader";
 import axios from "axios";
 import { ContentLoader } from "vue-content-loader";
+// import { getFullDate } from "../plugins/get-date";
 
 export default {
     components: {
@@ -129,8 +130,6 @@ export default {
                         data[i].content.rendered = content[i];
 
                         date.push(new Date(Date.parse(data[i].date)));
-                        // this.date.push(date[i]);
-                        // this.date[i].day.push(date[i].getDay());
                         this.date[i] = {
                             day: date[i].getDay(),
                             date: date[i].getDate(),
@@ -150,33 +149,6 @@ export default {
                     this.loading = false;
                     // console.log(error.response.data);
                 });
-        },
-        getFullDate(day, date, month, year) {
-            const months = [
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December"
-            ];
-            const days = [
-                "Minggu",
-                "Senin",
-                "Selasa",
-                "Rabu",
-                "Kamis",
-                "Jum'at",
-                "sabtu"
-            ];
-
-            return days[day] + ", " + date + " " + months[month] + " " + year;
         }
     }
 };
@@ -184,6 +156,9 @@ export default {
 <style>
 .img-post img {
     width: 155px;
+    height: 155px;
+    object-fit: cover;
+    border-radius: 0.25rem;
 }
 .text-gray {
     color: #525252;
