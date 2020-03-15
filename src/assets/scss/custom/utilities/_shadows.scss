@@ -8,3 +8,7 @@
 .shadow--hover:hover { box-shadow: $box-shadow !important; }
 .shadow-lg--hover:hover { box-shadow: $box-shadow-lg !important; }
 .shadow-none--hover:hover { box-shadow: none !important; }
+
+.item-hover:hover {
+    transform: translateX(10px);
+}

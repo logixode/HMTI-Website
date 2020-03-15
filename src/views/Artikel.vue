@@ -6,29 +6,49 @@
                 <h2 class="text-white post-title">Artikel</h2>
             </div>
             <div class="container mt-5">
-                <card shadow class="card-profile my-3" no-body :key="post.id" v-for="post in posts">
-                    <div class="px-4 pt-1 pb-2" v-show="loading">
-                        <content-loader height="87" primaryColor="#ddd">
-                            <rect x="0" y="10" rx="3" ry="3" width="70" height="70" />
-                            <rect x="80" y="16" rx="3" ry="3" width="150" height="9" />
-                            <rect x="80" y="31" rx="3" ry="3" width="30" height="8" />
-                            <rect x="115" y="31" rx="3" ry="3" width="50" height="8" />
-                            <rect x="170" y="31" rx="3" ry="3" width="40" height="8" />
-                            <rect x="80" y="45" rx="3" ry="3" width="280" height="8" />
-                            <rect x="80" y="58" rx="3" ry="3" width="250" height="8" />
-                            <rect x="80" y="71" rx="3" ry="3" width="60" height="5" />
+                <card
+                    shadow
+                    class="card-profile my-3"
+                    no-body
+                    v-for="i in 4"
+                    :key="i"
+                    v-show="loading"
+                >
+                    <div class="px-4 pt-1 pb-2">
+                        <content-loader height="77" primaryColor="#ddd">
+                            <rect x="0" y="10" rx="2" ry="2" width="63" height="63" />
+                            <rect x="70" y="11" rx="2" ry="2" width="150" height="9" />
+                            <rect x="70" y="27" rx="2" ry="2" width="30" height="8" />
+                            <rect x="115" y="27" rx="2" ry="2" width="50" height="8" />
+                            <rect x="170" y="27" rx="2" ry="2" width="40" height="8" />
+                            <rect x="70" y="42" rx="2" ry="2" width="280" height="8" />
+                            <rect x="70" y="56" rx="2" ry="2" width="250" height="8" />
+                            <rect x="70" y="70" rx="2" ry="2" width="60" height="5" />
                         </content-loader>
                     </div>
-                    <div class="pl-3 pr-5 pt-4 pb-4" v-show="!loading">
+                </card>
+
+                <card
+                    shadow
+                    class="shadow-lg--hover item-hover card-profile my-3"
+                    v-show="!loading"
+                    no-body
+                    :key="index"
+                    v-for="(post, index) in posts"
+                >
+                    <div class="pl-3 pr-5 pt-4 pb-4">
                         <!-- <div class="mt-3 py-3 border-top"> -->
                         <!-- <div class="artikel" > -->
 
                         <router-link :to="`/artikel/${post.id}`">
                             <div class="row">
-                                <div class="col-md-2">
-                                    <img src="img/brand/hmti.png" width="150px" alt />
+                                <div class="col-md-2 img-post">
+                                    <img v-if="img[index] != null" :src="img[index][1]" alt />
+                                    <img v-else src="img/brand/hmti.png" alt />
+                                    <!-- {{img[index]}} -->
+                                    <!-- <img :src="img[0][0]" width="150px" alt /> -->
                                 </div>
-                                <div class="col-md-10">
+                                <div class="col-md-10 pl-4">
                                     <h5>{{ post.title.rendered }}</h5>
                                     <div class="mt-2 mb-2">
                                         <span
@@ -49,7 +69,7 @@
                                     <div class="text-gray clamp-2" v-html="post.content.rendered"></div>
                                     <small
                                         class="text-gray mt-1 pt-1"
-                                    >{{ Date(Date.parse(post.date)) }}</small>
+                                    >{{ getFullDate(date[index].day, date[index].date, date[index].month, date[index].year) }}</small>
                                 </div>
                             </div>
                         </router-link>
@@ -73,28 +93,98 @@ export default {
     },
     data() {
         return {
-            loading: true,
+            loading: false,
             posts: [],
+            img: [],
+            date: [],
             error: null
         };
     },
-    async created() {
-        await axios
-            .get("wp/v2/posts?categories=1")
-            .then(response => {
-                this.posts = response.data;
-                // console.log(this.posts);
-                this.loading = false;
-            })
-            .catch(error => {
-                this.error = error.response.data;
-                this.loading = false;
-                // console.log(error.response.data);
-            });
+    created() {
+        this.loading = true;
+        this.getData();
+    },
+    methods: {
+        async getData() {
+            await axios
+                .get("wp/v2/posts?categories=1")
+                .then(response => {
+                    let data = response.data;
+
+                    let regexp = /<img[^>]+src\s*=\s*['"]([^'"]+)['"][^>]*>/g;
+                    let url = [],
+                        src = [],
+                        img = [],
+                        date = [],
+                        content = [];
+
+                    for (let i = 0; i < data.length; i++) {
+                        url.push(data[i].content.rendered);
+                        src.push(regexp.exec(url[i]));
+                        img.push(src[i]);
+
+                        content.push(
+                            url[i].replace(/<figure .*?figure>\n\n\n\n/g, "")
+                        );
+                        data[i].content.rendered = content[i];
+
+                        date.push(new Date(Date.parse(data[i].date)));
+                        // this.date.push(date[i]);
+                        // this.date[i].day.push(date[i].getDay());
+                        this.date[i] = {
+                            day: date[i].getDay(),
+                            date: date[i].getDate(),
+                            month: date[i].getMonth(),
+                            year: date[i].getFullYear()
+                        };
+                    }
+
+                    // console.log(src);
+                    this.img = img;
+                    this.posts = data;
+
+                    this.loading = false;
+                })
+                .catch(error => {
+                    this.error = error.response.data;
+                    this.loading = false;
+                    // console.log(error.response.data);
+                });
+        },
+        getFullDate(day, date, month, year) {
+            const months = [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            ];
+            const days = [
+                "Minggu",
+                "Senin",
+                "Selasa",
+                "Rabu",
+                "Kamis",
+                "Jum'at",
+                "sabtu"
+            ];
+
+            return days[day] + ", " + date + " " + months[month] + " " + year;
+        }
     }
 };
 </script>
 <style>
+.img-post img {
+    width: 155px;
+}
 .text-gray {
     color: #525252;
 }

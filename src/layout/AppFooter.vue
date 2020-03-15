@@ -104,19 +104,19 @@ export default {
 <style>
 footer {
     padding-bottom: 0 !important;
-    -webkit-transition: all 0.15s ease !important;
-    transition: all 0.15s ease !important;
+    /* -webkit-transition: all 0.15s ease !important;
+    transition: all 0.15s ease !important; */
 }
 
 .footer-dark {
     background-color: #202020;
-    -webkit-transition: all 0.15s ease !important;
-    transition: all 0.15s ease !important;
+    /* -webkit-transition: all 0.15s ease !important;
+    transition: all 0.15s ease !important; */
 }
 .top-footer-dark {
     background-color: #272727;
-    -webkit-transition: all 0.15s ease !important;
-    transition: all 0.15s ease !important;
+    /* -webkit-transition: all 0.15s ease !important;
+    transition: all 0.15s ease !important; */
 }
 
 .gradient-bar {
