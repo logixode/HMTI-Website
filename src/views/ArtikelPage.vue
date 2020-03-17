@@ -5,18 +5,17 @@
             <div class="container">
                 <card shadow class="card-profile mt--400" no-body>
                     <div class="px-5">
-                        <div class="py-3 border-top" v-if="loading">
+                        <!-- <div class="py-3 border-top" v-if="loading">
                             <content-loader-post></content-loader-post>
-                        </div>
+                        </div>-->
                         <!-- <div class="my-5 border-top text-center" v-else>
                             
                         </div>-->
-                        <div class="mt-3 py-3 border-top" v-else>
-                            <!-- <div v-if="error.hasOwnProperty('message')">
+                        <div class="mt-3 py-3 border-top">
+                            <div class="text-center py-5" v-if="error != null">
                                 <h1 class="display-1">ERROR {{ error.data.status }}</h1>
                                 <h4>- {{ error.message }} -</h4>
-                                <a href="/#/artikel/1">asd</a>
-                            </div>-->
+                            </div>
                             <div v-show="error == null">
                                 <div class="row">
                                     <div class="col-md-6">
@@ -57,13 +56,11 @@ export default {
     data() {
         return {
             loading: false,
-            posts: [
-                {
-                    title: { rendered: "" },
-                    date: "",
-                    content: { rendered: "" }
-                }
-            ],
+            posts: {
+                title: { rendered: "" },
+                date: "",
+                content: { rendered: "" }
+            },
             date: [],
             error: null,
             id: this.$route.params.id
@@ -80,7 +77,7 @@ export default {
     methods: {
         async getData(id) {
             this.error = null;
-            this.posts = [];
+            // this.posts = [];
             this.loading = true;
             await axios
                 .get(`wp/v2/posts/${id}/`)
@@ -89,12 +86,6 @@ export default {
 
                     let date;
 
-                    // this.date = {
-                    //     day: date.getDay(),
-                    //     date: date.getDate(),
-                    //     month: date.getMonth(),
-                    //     year: date.getFullYear()
-                    // };
                     date = new Date(Date.parse(data.date));
                     this.date = {
                         day: date.getDay(),
@@ -109,6 +100,7 @@ export default {
                 })
                 .catch(error => {
                     this.error = error.response.data;
+
                     // console.log(error.response.data);
                     this.loading = false;
                 });
@@ -117,4 +109,7 @@ export default {
 };
 </script>
 <style>
+figure {
+    text-align: center;
+}
 </style>
