@@ -49,10 +49,8 @@
                         <router-link :to="`/artikel/${post.id}`">
                             <div class="row">
                                 <div class="col-md-2 img-post">
-                                    <img v-if="img[index] != null" :src="img[index][1]" alt />
-                                    <img v-else src="img/brand/hmti.png" alt />
-                                    <!-- {{img[index]}} -->
-                                    <!-- <img :src="img[0][0]" width="150px" alt /> -->
+                                    <img v-if="img[index] != null" v-lazy="img[index][1]" alt />
+                                    <img v-else v-lazy="'img/brand/hmti.png'" alt />
                                 </div>
                                 <div class="col-md-10 pl-4">
                                     <h5>{{ post.title.rendered }}</h5>

@@ -5,13 +5,13 @@
             <div class="container">
                 <card shadow class="card-profile mt--400" no-body>
                     <div class="px-5">
-                        <!-- <div class="py-3 border-top" v-if="loading">
+                        <div class="py-3 border-top" v-if="loading">
                             <content-loader-post></content-loader-post>
-                        </div>-->
+                        </div>
                         <!-- <div class="my-5 border-top text-center" v-else>
                             
                         </div>-->
-                        <div class="mt-3 py-3 border-top">
+                        <div class="mt-3 py-3 border-top" v-else>
                             <div class="text-center py-5" v-if="error != null">
                                 <h1 class="display-1">ERROR {{ error.data.status }}</h1>
                                 <h4>- {{ error.message }} -</h4>
