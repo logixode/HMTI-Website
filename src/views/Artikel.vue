@@ -6,6 +6,12 @@
                 <h2 class="text-white post-title">Artikel</h2>
             </div>
             <div class="container mt-5">
+                <card shadow class="card-profile my-3" no-body v-if="error != null">
+                    <div class="px-4 py-4 text-center">
+                        <h1 class="display-1">ERROR {{ error.data.status }}</h1>
+                        <h4>- {{ error.message }} -</h4>
+                    </div>
+                </card>
                 <card
                     shadow
                     class="card-profile my-3"

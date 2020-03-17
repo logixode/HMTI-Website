@@ -23,7 +23,7 @@
                                         <h2>{{ posts.title.rendered }}</h2>
                                     </div>
                                     <div class="col-md-6 text-right">
-                                        <small>{{ Date(Date.parse(posts.date)) }}</small>
+                                        <small>{{ getFullDate(date.day, date.date, date.month, date.year) }}</small>
                                     </div>
                                 </div>
                                 <div class>
@@ -87,16 +87,21 @@ export default {
                 .then(response => {
                     let data = response.data;
 
-                    let date = [];
+                    let date;
 
-                    date.push(new Date(Date.parse(data.date)));
                     // this.date = {
                     //     day: date.getDay(),
                     //     date: date.getDate(),
                     //     month: date.getMonth(),
                     //     year: date.getFullYear()
                     // };
-                    this.date.push(date);
+                    date = new Date(Date.parse(data.date));
+                    this.date = {
+                        day: date.getDay(),
+                        date: date.getDate(),
+                        month: date.getMonth(),
+                        year: date.getFullYear()
+                    };
 
                     this.posts = response.data;
                     // console.log(this.posts);
