@@ -93,7 +93,8 @@
 export default {
     data() {
         return {
-            posts: []
+            posts: [],
+            error: null
         };
     },
     created() {
@@ -105,6 +106,7 @@ export default {
                 // console.log(response);
             },
             error => {
+                this.error = error.response.data;
                 console.log(error);
             }
         );
