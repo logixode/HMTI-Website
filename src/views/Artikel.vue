@@ -39,8 +39,8 @@
                     class="shadow-lg--hover item-hover card-profile my-3"
                     v-show="!loading"
                     no-body
-                    :key="index"
-                    v-for="(post, index) in posts"
+                    :key="i"
+                    v-for="(post, i) in posts"
                 >
                     <div class="px-4 py-4">
                         <!-- <div class="mt-3 py-3 border-top"> -->
@@ -49,15 +49,17 @@
                         <router-link :to="`/artikel/${post.id}`">
                             <div class="row">
                                 <div class="col-md-2 img-post">
-                                    <img v-if="img[index] != null" v-lazy="img[index][1]" alt />
+                                    <img v-if="img[i] != null" v-lazy="img[i][1]" alt />
                                     <img v-else v-lazy="'img/brand/hmti.png'" alt />
                                 </div>
                                 <div class="col-md-10 pl-4">
                                     <h5>{{ post.title.rendered }}</h5>
-                                    <div class="mt-2 mb-2">
+                                    <div class="mt-2 mb-2 pb-1">
                                         <span
                                             class="badge text-unset badge-pill badge-primary"
-                                        >Primary</span>
+                                            v-for="(tag,j) in post.tags"
+                                            :key="j"
+                                        >{{ tag }}</span>
                                         <span
                                             class="badge text-unset badge-pill badge-success"
                                         >Success</span>
@@ -73,7 +75,7 @@
                                     <div class="text-gray clamp-2" v-html="post.content.rendered"></div>
                                     <small
                                         class="text-gray mt-1 pt-1"
-                                    >{{ getFullDate(date[index].day, date[index].date, date[index].month, date[index].year) }}</small>
+                                    >{{ getFullDate(date[i].day, date[i].date, date[i].month, date[i].year) }}</small>
                                 </div>
                             </div>
                         </router-link>
@@ -102,12 +104,15 @@ export default {
             posts: [],
             img: [],
             date: [],
-            error: null
+            error: null,
+            tags: []
         };
     },
-    created() {
+    mounted() {
         this.loading = true;
         this.getData();
+        this.getTags();
+        // console.log(this.getTags());
     },
     methods: {
         async getData() {
@@ -121,13 +126,15 @@ export default {
                         src = [],
                         img = [],
                         date = [],
-                        content = [];
+                        content = [],
+                        tags = [];
 
                     for (let i = 0; i < data.length; i++) {
                         url.push(data[i].content.rendered);
                         src.push(regexp.exec(url[i]));
                         img.push(src[i]);
 
+                        // menghapus tag figure didalam content
                         content.push(
                             url[i].replace(/<figure .*?figure>\n\n\n\n/g, "")
                         );
@@ -140,9 +147,15 @@ export default {
                             month: date[i].getMonth(),
                             year: date[i].getFullYear()
                         };
+
+                        // mengganti isi tag(id) dengan value name
+                        data[i].tags = data[i].tags.map(
+                            value =>
+                                this.tags.filter(tagId => tagId.id === value)[0]
+                                    .name
+                        );
                     }
 
-                    // console.log(src);
                     this.img = img;
                     this.posts = data;
 
