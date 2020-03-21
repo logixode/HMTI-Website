@@ -4,7 +4,7 @@
         <section class="section section-skew">
             <div class="container">
                 <card shadow class="card-profile mt--500" no-body>
-                    <div class="px-4">
+                    <div class="px-5">
                         <div class="row justify-content-center">
                             <div class="col-lg-3 order-lg-2">
                                 <div class="card-profile-image">
@@ -60,7 +60,7 @@
                         </div>
                         <div class="mt-5 py-5 border-top text-center">
                             <div class="row justify-content-center">
-                                <div class="col-lg-9">
+                                <div class="col-lg-10">
                                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque tempora maiores incidunt commodi nisi? Magni ipsum sequi, quo consequatur corporis laboriosam labore minus voluptas quas atque facere a tempore dolores dolorem molestiae ipsam eligendi. Repellat aspernatur dolorum odit vitae tempora tempore qui ab eveniet, debitis temporibus quod voluptates voluptatem, illum magnam similique cumque natus nesciunt officiis? Nobis velit possimus nostrum beatae earum libero reiciendis ducimus laboriosam consectetur quos dignissimos dicta quaerat, enim provident. Consectetur deleniti sit, ad esse odio velit ratione quod tenetur corporis, ut asperiores nihil qui, eveniet obcaecati?</p>
 
                                     <img src="img/struktur.png" alt />
@@ -82,7 +82,10 @@ export default {
     }
 };
 </script>
-<style>
+<style scoped>
+.profile-page .card-profile .card-profile-image img {
+    box-shadow: unset !important;
+}
 img {
     max-width: 700px;
 }
