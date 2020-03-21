@@ -33,6 +33,13 @@ axios.defaults.baseURL = 'http://localhost/index.php/wp-json/'
 
 Vue.mixin({
     methods: {
+        async getTags () {
+            await axios
+                .get(`wp/v2/tags?per_page=100`)
+                .then(response => {
+                    this.tags = response.data
+                })
+        },
         getFullDate (day, date, month, year) {
             const months = [
                 "Januari",
@@ -55,7 +62,7 @@ Vue.mixin({
                 "Rabu",
                 "Kamis",
                 "Jum'at",
-                "sabtu"
+                "Sabtu"
             ];
 
             return days[day] + ", " + date + " " + months[month] + " " + year;
