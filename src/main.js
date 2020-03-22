@@ -21,11 +21,9 @@ import router from "./router";
 import Argon from "./plugins/argon-kit";
 import './registerServiceWorker'
 import VueResource from 'vue-resource'
-import VueYouTubeEmbed from 'vue-youtube-embed'
 import axios from 'axios'
 
 Vue.use(VueResource)
-Vue.use(VueYouTubeEmbed)
 Vue.use(Argon);
 Vue.use(axios);
 

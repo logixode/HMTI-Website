@@ -16,7 +16,9 @@
             </div>
             <coming-soon></coming-soon>
         </section>
-        <youtube-embed :videoId1="url1" :videoId2="url2" :videoId3="url3"></youtube-embed>
+
+        <br />
+        <youtube-embed></youtube-embed>
         <!-- <hero></hero> -->
         <!-- <basic-elements></basic-elements>
         <inputs></inputs>
@@ -62,14 +64,6 @@ export default {
         VisiMisi,
         Prestasi,
         ComingSoon
-    },
-
-    data() {
-        return {
-            url1: "M7lc1UVf-VE",
-            url2: "VPSoNx1gyQ4",
-            url3: "M7lc1UVf-VE"
-        };
     }
 };
 </script>
