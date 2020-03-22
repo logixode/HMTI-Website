@@ -42,7 +42,7 @@
                     <div class="col-md-6">
                         <div class="copyright">
                             &copy; {{year}}
-                            <a href="/" rel="noopener">HMTI - Software Developer</a> | Made with
+                            <a href="/" rel="noopener">Software Developer of HMTI</a> | Made with
                             <a
                                 href="https://vuejs.org"
                                 target="_blank"
