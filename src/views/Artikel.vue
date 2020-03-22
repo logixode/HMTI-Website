@@ -17,7 +17,7 @@
                     class="card-profile my-3"
                     no-body
                     v-for="i in 4"
-                    :key="i"
+                    :key="'loader'+i"
                     v-show="loading"
                 >
                     <div class="px-4 pt-1 pb-2">
@@ -108,18 +108,17 @@ export default {
             tags: []
         };
     },
-    mounted() {
-        this.loading = true;
+    created() {
         this.getData();
         this.getTags();
-        // console.log(this.getTags());
+        this.loading = true;
     },
     methods: {
-        async getData() {
-            await axios
+        getData() {
+            axios
                 .get("wp/v2/posts?categories=1")
-                .then(response => {
-                    let data = response.data;
+                .then(async response => {
+                    let data = await response.data;
 
                     let regexp = /<img[^>]+src\s*=\s*['"]([^'"]+)['"][^>]*>/g;
                     let url = [],
@@ -156,8 +155,8 @@ export default {
                         );
                     }
 
-                    this.img = img;
-                    this.posts = data;
+                    this.posts = await data;
+                    this.img = await img;
 
                     this.loading = false;
                 })
