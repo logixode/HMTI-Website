@@ -4,14 +4,11 @@
         <section class="section section-skew mt--150">
             <div class="container">
                 <card shadow class="card-profile mt--400" no-body>
-                    <div class="px-5">
+                    <div class="px-4 px-md-5">
                         <div class="py-3 border-top" v-if="loading">
                             <content-loader-post></content-loader-post>
                         </div>
-                        <!-- <div class="my-5 border-top text-center" v-else>
-                            
-                        </div>-->
-                        <div class="mt-3 py-3" v-else>
+                        <div class="mt-1 mt-md-3 py-3" v-else>
                             <div class="text-center py-5" v-if="error != null">
                                 <h1 class="display-1">ERROR {{ error.data.status }}</h1>
                                 <h4>- {{ error.message }} -</h4>

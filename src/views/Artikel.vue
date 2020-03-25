@@ -60,7 +60,7 @@
                                             v-for="(tag,j) in post.tags"
                                             :key="j"
                                         >{{ tag }}</span>
-                                        <span
+                                        <!-- <span
                                             class="badge text-unset badge-pill badge-success"
                                         >Success</span>
                                         <span
@@ -70,7 +70,7 @@
                                             class="badge text-unset badge-pill badge-warning"
                                         >Warning</span>
                                         <span class="badge text-unset badge-pill badge-info">Info</span>
-                                        <span class="badge text-unset badge-pill badge-dark">Dark</span>
+                                        <span class="badge text-unset badge-pill badge-dark">Dark</span>-->
                                     </div>
                                     <div class="text-gray clamp-2" v-html="post.content.rendered"></div>
                                     <small
@@ -79,8 +79,6 @@
                                 </div>
                             </div>
                         </router-link>
-                        <!-- </div> -->
-                        <!-- </div> -->
                     </div>
                 </card>
                 <div class="d-flex justify-content-end">

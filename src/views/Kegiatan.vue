@@ -35,6 +35,24 @@ export default {
 </script>
 <style>
 img {
-    max-width: 700px;
+    max-width: 800px;
+}
+
+@media only screen and (max-width: 768px) {
+    img {
+        max-width: 580px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    img {
+        max-width: 280px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    img {
+        max-width: 250px;
+    }
 }
 </style>
