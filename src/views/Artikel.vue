@@ -83,12 +83,20 @@
                         <!-- </div> -->
                     </div>
                 </card>
+                <div class="d-flex justify-content-end">
+                    <base-pagination
+                        class="my-4"
+                        :page-count="parseInt(paging.total)"
+                        v-model="paging.default"
+                    ></base-pagination>
+                </div>
             </div>
         </section>
     </div>
 </template>
 <script>
 import ComponentsHeader from "./components/ComponentsHeader";
+// import JavascriptComponents from "./components/JavascriptComponents";
 import axios from "axios";
 import { ContentLoader } from "vue-content-loader";
 // import { getFullDate } from "../plugins/get-date";
@@ -96,6 +104,7 @@ import { ContentLoader } from "vue-content-loader";
 export default {
     components: {
         ComponentsHeader,
+        // JavascriptComponents,
         ContentLoader
     },
     data() {
@@ -105,18 +114,27 @@ export default {
             img: [],
             date: [],
             error: null,
-            tags: []
+            tags: [],
+            paging: {
+                default: 1,
+                total: 1
+            }
         };
     },
-    created() {
-        this.getData();
+    watch: {
+        "paging.default": function(v) {
+            this.getData(v);
+        }
+    },
+    mounted() {
+        this.getData(this.paging.default);
         this.getTags();
         this.loading = true;
     },
     methods: {
-        getData() {
+        getData(page) {
             axios
-                .get("wp/v2/posts?categories=1")
+                .get(`wp/v2/posts?categories=1&per_page=6&page=${page}`)
                 .then(async response => {
                     let data = await response.data;
 
@@ -139,6 +157,7 @@ export default {
                         );
                         data[i].content.rendered = content[i];
 
+                        // get date
                         date.push(new Date(Date.parse(data[i].date)));
                         this.date[i] = {
                             day: date[i].getDay(),
@@ -155,6 +174,7 @@ export default {
                         );
                     }
 
+                    this.paging.total = response.headers["x-wp-totalpages"];
                     this.posts = await data;
                     this.img = await img;
 
