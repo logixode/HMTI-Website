@@ -1,19 +1,22 @@
 <template>
     <div class="container">
-        <div class="d-flex justify-content-between mx--100" v-if="!loading">
+        <div class="d-flex justify-content-center mx--100" v-if="!loading">
             <div
                 v-for="list in youtube"
                 :key="list.id"
                 v-html="list.content.rendered"
-                class="col-md-4 pl-0"
+                class="col-md-4 px-1"
             />
         </div>
-        <base-pagination
-            v-if="paging.total != 1"
-            class="my-4"
-            :page-count="parseInt(paging.total)"
-            v-model="paging.default"
-        ></base-pagination>
+        <div class="d-flex justify-content-center">
+            <base-pagination
+                v-if="paging.total != 1"
+                class="my-4"
+                size="sm"
+                :page-count="parseInt(paging.total)"
+                v-model="paging.default"
+            ></base-pagination>
+        </div>
     </div>
 </template>
 <script>
