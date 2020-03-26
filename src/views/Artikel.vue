@@ -83,6 +83,7 @@
                 </card>
                 <div class="d-flex justify-content-end">
                     <base-pagination
+                        v-if="paging.total != 1"
                         class="my-4"
                         :page-count="parseInt(paging.total)"
                         v-model="paging.default"
