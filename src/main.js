@@ -19,59 +19,69 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import Argon from "./plugins/argon-kit";
-import './registerServiceWorker'
-import VueResource from 'vue-resource'
-import axios from 'axios'
+import './registerServiceWorker';
+import VueResource from 'vue-resource';
+import axios from 'axios';
 
-Vue.use(VueResource)
+Vue.use(VueResource);
 Vue.use(Argon);
 Vue.use(axios);
 
-axios.defaults.baseURL = 'http://localhost/index.php/wp-json/'
+axios.defaults.baseURL = 'http://localhost/index.php/wp-json/';
 
 Vue.mixin({
-    methods: {
-        async getTags () {
-            await axios
-                .get(`wp/v2/tags?per_page=100`)
-                .then(response => {
-                    this.tags = response.data
-                })
-        },
-        getFullDate (day, date, month, year) {
-            const months = [
-                "Januari",
-                "Februari",
-                "Maret",
-                "April",
-                "Mei",
-                "Juni",
-                "Juli",
-                "Agustus",
-                "September",
-                "Oktober",
-                "November",
-                "Desember"
-            ];
-            const days = [
-                "Minggu",
-                "Senin",
-                "Selasa",
-                "Rabu",
-                "Kamis",
-                "Jum'at",
-                "Sabtu"
-            ];
+  data: () => ({
+    categories: []
+  }),
+  methods: {
+    async getTags() {
+      await axios
+        .get(`wp/v2/tags?per_page=100`)
+        .then(response => {
+          this.tags = response.data;
+        });
+    },
+    async getCategories() {
+      await axios
+        .get(`wp/v2/categories?per_page=100`)
+        .then(response => {
+          this.categories = response.data;
+        });
+    },
+    getFullDate(day, date, month, year) {
+      const months = [
+        "Januari",
+        "Februari",
+        "Maret",
+        "April",
+        "Mei",
+        "Juni",
+        "Juli",
+        "Agustus",
+        "September",
+        "Oktober",
+        "November",
+        "Desember"
+      ];
+      const days = [
+        "Minggu",
+        "Senin",
+        "Selasa",
+        "Rabu",
+        "Kamis",
+        "Jum'at",
+        "Sabtu"
+      ];
 
-            return days[day] + ", " + date + " " + months[month] + " " + year;
-        }
+      return days[day] + ", " + date + " " + months[month] + " " + year;
     }
-})
+  }
+});
 // Vue.prototype.$http = axios
 // Vue.http.options.root = 'http://localhost/index.php/wp-json/'
 
 Vue.config.productionTip = false;
 new Vue({
-    router,
-    render: h => h(App)
+  router,
+  render: h => h(App)
 }).$mount("#app");
