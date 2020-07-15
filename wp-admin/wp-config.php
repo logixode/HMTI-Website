@@ -22,7 +22,7 @@ define( 'DB_NAME', 'wordpress' );
 define( 'DB_USER', 'root' );
 
 /** Kata sandi basis data MySQL */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', "'" );
 
 /** Nama host MySQL */
 define( 'DB_HOST', 'localhost' );
