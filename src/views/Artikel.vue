@@ -21,15 +21,15 @@
           v-show="loading"
         >
           <div class="px-4 pt-1 pb-2">
-            <content-loader height="77" primaryColor="#ddd">
+            <content-loader height="80" primaryColor="#ddd">
               <rect x="0" y="10" rx="2" ry="2" width="63" height="63" />
               <rect x="70" y="11" rx="2" ry="2" width="150" height="9" />
               <rect x="70" y="27" rx="2" ry="2" width="30" height="8" />
               <rect x="115" y="27" rx="2" ry="2" width="50" height="8" />
               <rect x="170" y="27" rx="2" ry="2" width="40" height="8" />
               <rect x="70" y="42" rx="2" ry="2" width="280" height="8" />
-              <rect x="70" y="56" rx="2" ry="2" width="250" height="8" />
-              <rect x="70" y="70" rx="2" ry="2" width="60" height="5" />
+              <rect x="70" y="54" rx="2" ry="2" width="250" height="8" />
+              <rect x="70" y="68" rx="2" ry="2" width="60" height="5" />
             </content-loader>
           </div>
         </card>
@@ -104,7 +104,7 @@ export default {
   components: {
     ComponentsHeader,
     // JavascriptComponents,
-    ContentLoader
+    ContentLoader,
   },
   data() {
     return {
@@ -116,14 +116,14 @@ export default {
       tags: [],
       paging: {
         default: 1,
-        total: 1
-      }
+        total: 1,
+      },
     };
   },
   watch: {
-    "paging.default": function(v) {
+    "paging.default": function (v) {
       this.getData(v);
-    }
+    },
   },
   mounted() {
     this.getData(this.paging.default);
@@ -134,7 +134,7 @@ export default {
     getData(page) {
       axios
         .get(`wp/v2/posts?categories=1&per_page=6&page=${page}`)
-        .then(async response => {
+        .then(async (response) => {
           let data = await response.data;
 
           let regexp = /<img[^>]+src\s*=\s*['"]([^'"]+)['"][^>]*>/g;
@@ -160,16 +160,16 @@ export default {
               day: date[i].getDay(),
               date: date[i].getDate(),
               month: date[i].getMonth(),
-              year: date[i].getFullYear()
+              year: date[i].getFullYear(),
             };
 
             // mengganti isi tag(id) dengan value name
             data[i].tags = data[i].tags.map(
-              value => this.tags.filter(tagId => tagId.id === value)[0].name
+              (value) => this.tags.filter((tagId) => tagId.id === value)[0].name
             );
           }
 
-          console.log(data);
+          // console.log(data);
 
           this.paging.total = response.headers["x-wp-totalpages"];
           this.posts = await data;
@@ -177,13 +177,14 @@ export default {
 
           this.loading = false;
         })
-        .catch(error => {
+        .catch((error) => {
           this.error = error.response.data;
+          console.log(error);
           this.loading = false;
           // console.log(error.response.data);
         });
-    }
-  }
+    },
+  },
 };
 </script>
 <style>

@@ -5,7 +5,7 @@
     </div>
     <div class="row align-items-center">
       <div class="col-md-7 order-lg-1 ml-lg-auto">
-        <div class="position-relative pl-md-5">
+        <div class="position-relative">
           <img src="img/events.svg" class="img-center img-fluid" />
         </div>
       </div>
@@ -23,7 +23,31 @@
           </div>
         </div>-->
         <div class="scrollable-card px-3">
-          <card shadow class="shadow-lg--hover mb-3" v-for="(post, i) in posts" :key="i">
+          <card
+            shadow
+            class="card-profile my-3"
+            no-body
+            v-for="i in 3"
+            :key="'loader'+i"
+            v-show="loading"
+          >
+            <div class="px-4 pt-3 pb-2">
+              <content-loader height="175" primaryColor="#ddd">
+                <rect x="0" y="10" rx="2" ry="2" width="145" height="145" />
+                <rect x="160" y="11" rx="2" ry="2" width="150" height="35" />
+                <rect x="160" y="62" rx="2" ry="2" width="100" height="18" />
+                <rect x="160" y="95" rx="2" ry="2" width="180" height="23" />
+                <rect x="160" y="130" rx="2" ry="2" width="230" height="23" />
+              </content-loader>
+            </div>
+          </card>
+          <card
+            shadow
+            class="shadow-lg--hover mb-3"
+            v-show="!loading"
+            v-for="(post, i) in posts"
+            :key="i"
+          >
             <div class="row">
               <div class="col-md-4 img-post">
                 <img v-if="img[i] != null" v-lazy="img[i][1]" alt />
@@ -44,10 +68,15 @@
 </template>
 <script>
 import axios from "axios";
+import { ContentLoader } from "vue-content-loader";
 
 export default {
+  components: {
+    ContentLoader
+  },
   data() {
     return {
+      loading: false,
       posts: [],
       date: [],
       img: [],
@@ -56,6 +85,7 @@ export default {
   },
   created() {
     this.getData();
+    this.loading = true;
   },
   methods: {
     getData() {
