@@ -3,7 +3,7 @@
     <components-header></components-header>
     <section class="section section-skew mt--400">
       <div class="text-center mt--150 text-uppercase">
-        <h2 class="text-white post-title">Artikel</h2>
+        <h2 class="text-white page-title">Artikel</h2>
       </div>
       <div class="container mt-5">
         <card shadow class="card-profile my-3" no-body v-if="error != null">
@@ -48,11 +48,11 @@
 
             <router-link :to="`/artikel/${post.id}`">
               <div class="row">
-                <div class="col-md-2 img-post">
+                <div class="col-sm-4 col-md-2 img-post">
                   <img v-if="img[i] != null" v-lazy="img[i][1]" alt />
                   <img v-else v-lazy="'img/brand/hmti.png'" alt />
                 </div>
-                <div class="col-md-10 pl-4">
+                <div class="col-sm-8 col-md-10 pl-4">
                   <h5>{{ post.title.rendered }}</h5>
                   <div class="mt-2 mb-2 pb-1">
                     <span
@@ -195,5 +195,12 @@ export default {
 }
 .text-gray {
   color: #525252;
+}
+
+@media (max-width: 576px) {
+  .img-post {
+    text-align: center;
+    margin-bottom: 10px;
+  }
 }
 </style>

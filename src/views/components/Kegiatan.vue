@@ -1,40 +1,39 @@
 <template>
   <div class="container py-0">
+    <div class="text-center mb-4 text-uppercase">
+      <h2 class="text-white page-title">Kegiatan</h2>
+    </div>
     <div class="row align-items-center">
-      <div class="col-md-6 order-lg-2 ml-lg-auto">
+      <div class="col-md-7 order-lg-1 ml-lg-auto">
         <div class="position-relative pl-md-5">
-          <img src="img/ill/ill-2.svg" class="img-center img-fluid" />
+          <img src="img/events.svg" class="img-center img-fluid" />
         </div>
       </div>
-      <div class="col-lg-6 order-lg-1">
-        <div class="d-flex px-3 pb-2">
-          <!-- <div>
-                        <icon
-                            name="ni ni-building"
-                            size="lg"
-                            class="bg-gradient-white"
-                            color="primary"
-                            shadow
-                            rounded
-                        ></icon>
-          </div>-->
-          <div class="pl-4">
-            <h2 class="display-3 text-white">Kegiatan</h2>
+      <div class="col-lg-5 order-lg-2">
+        <!-- <div class="d-flex px-3 pb-2">
+          <div>
+            <icon
+              name="ni ni-building"
+              size="lg"
+              class="bg-gradient-white"
+              color="primary"
+              shadow
+              rounded
+            ></icon>
           </div>
-        </div>
+        </div>-->
         <div class="scrollable-card px-3">
           <card shadow class="shadow-lg--hover mb-3" v-for="(post, i) in posts" :key="i">
-            <div class="d-flex px-3">
-              <div class="img-post">
+            <div class="row">
+              <div class="col-md-4 img-post">
                 <img v-if="img[i] != null" v-lazy="img[i][1]" alt />
                 <img v-else v-lazy="'img/brand/hmti.png'" alt />
                 <!--  <icon name="ni ni-satisfied" gradient="success" color="white" shadow rounded></icon> -->
               </div>
-              <div class="pl-4 clamp-2">
-                <h4 class="title text-success">{{ post.title.rendered }}</h4>
-                <p>{{ getFullDate(date[i].day, date[i].date, date[i].month, date[i].year) }}</p>
-                <div v-html="post.content.rendered"></div>
-                <a href="#" class="text-success">Learn more</a>
+              <div class="col-md-8 pl-4 overflow-hidden">
+                <h5 class="title text-success mt-2">{{ post.title.rendered }}</h5>
+                <small>{{ getFullDate(date[i].day, date[i].date, date[i].month, date[i].year) }}</small>
+                <div class="clamp-2" v-html="post.content.rendered"></div>
               </div>
             </div>
           </card>
@@ -114,6 +113,10 @@ export default {
 };
 </script>
 <style scoped>
+.img-post img {
+  width: 100px;
+  height: 100px;
+}
 .scrollable-card {
   height: 550px;
   overflow-y: scroll;

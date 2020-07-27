@@ -71,7 +71,7 @@ export default {
 .text-unset {
   text-transform: unset !important;
 }
-.post-title {
+.page-title {
   letter-spacing: 5px;
 }
 .clamp-2 p {
@@ -81,5 +81,8 @@ export default {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   margin-bottom: 5px !important;
+}
+.clamp-2 p:nth-child(n + 2) {
+  display: none;
 }
 </style>

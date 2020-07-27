@@ -1,23 +1,21 @@
 <template>
-    <header class="header-global">
-        <base-nav class="navbar-main" transparent type effect="light" expand>
-            <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
-                <img src="img/brand/hmti.png" alt="logo" />
-                <b class="h6 text-white font-weight-bold">HMTI POLIWANGI</b>
-            </router-link>
+  <header class="header-global">
+    <base-nav class="navbar-main" transparent type effect="light" expand>
+      <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
+        <img src="img/brand/hmti.png" alt="logo" />
+        <b class="h6 text-white font-weight-bold">HMTI POLIWANGI</b>
+      </router-link>
 
-            <div class="row" slot="content-header" slot-scope="{closeMenu}">
-                <div class="col-6 collapse-brand">
-                    <a href="https://demos.creative-tim.com/vue-argon-design-system/documentation/">
-                        <img src="img/brand/blue.png" />
-                    </a>
-                </div>
-                <div class="col-6 collapse-close">
-                    <close-button @click="closeMenu"></close-button>
-                </div>
-            </div>
+      <div class="row" slot="content-header" slot-scope="{closeMenu}">
+        <div class="col-6 collapse-brand">
+          <h5>Navigasi Menu</h5>
+        </div>
+        <div class="col-6 collapse-close">
+          <close-button @click="closeMenu"></close-button>
+        </div>
+      </div>
 
-            <!-- <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+      <!-- <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
                 <base-dropdown class="nav-item" menu-classes="dropdown-menu-xl">
                     <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
                         <i class="ni ni-ui-04 d-lg-none"></i>
@@ -70,55 +68,55 @@
                     <router-link to="/login" class="dropdown-item">Login</router-link>
                     <router-link to="/register" class="dropdown-item">Register</router-link>
                 </base-dropdown>
-            </ul>-->
-            <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-                <li class="nav-item">
-                    <router-link slot="brand" to="/">
-                        <a class="nav-link nav-link-icon" rel="noopener">
-                            <!-- <i class="fa fa-facebook-square"></i>
-                            <span class="nav-link-inner--text d-lg-none">Facebook</span>-->
-                            Beranda
-                        </a>
-                    </router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link slot="brand" to="/artikel">
-                        <a class="nav-link nav-link-icon" rel="noopener">
-                            Artikel
-                            <!-- <i class="fa fa-instagram"></i>
-                            <span class="nav-link-inner--text d-lg-none">Instagram</span>-->
-                        </a>
-                    </router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link slot="brand" to="/kegiatan">
-                        <a class="nav-link nav-link-icon" rel="noopener">
-                            Kegiatan
-                            <!-- <i class="fa fa-twitter-square"></i>
-                            <span class="nav-link-inner--text d-lg-none">Twitter</span>-->
-                        </a>
-                    </router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link slot="brand" to="/prestasi">
-                        <a class="nav-link nav-link-icon" rel="noopener">
-                            Prestasi & Produk
-                            <!-- <i class="fa fa-github"></i>
-                            <span class="nav-link-inner--text d-lg-none">Github</span>-->
-                        </a>
-                    </router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link slot="brand" to="/tentang">
-                        <a class="nav-link nav-link-icon" rel="noopener">
-                            Tentang
-                            <!-- <i class="fa fa-github"></i>
-                            <span class="nav-link-inner--text d-lg-none">Github</span>-->
-                        </a>
-                    </router-link>
-                </li>
+      </ul>-->
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+        <li class="nav-item">
+          <router-link slot="brand" to="/">
+            <a class="nav-link nav-link-icon" rel="noopener">
+              <!-- <i class="fa fa-facebook-square"></i>
+              <span class="nav-link-inner--text d-lg-none">Facebook</span>-->
+              Beranda
+            </a>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link slot="brand" to="/artikel">
+            <a class="nav-link nav-link-icon" rel="noopener">
+              Artikel
+              <!-- <i class="fa fa-instagram"></i>
+              <span class="nav-link-inner--text d-lg-none">Instagram</span>-->
+            </a>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link slot="brand" to="/kegiatan">
+            <a class="nav-link nav-link-icon" rel="noopener">
+              Kegiatan
+              <!-- <i class="fa fa-twitter-square"></i>
+              <span class="nav-link-inner--text d-lg-none">Twitter</span>-->
+            </a>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link slot="brand" to="/prestasi">
+            <a class="nav-link nav-link-icon" rel="noopener">
+              Prestasi & Produk
+              <!-- <i class="fa fa-github"></i>
+              <span class="nav-link-inner--text d-lg-none">Github</span>-->
+            </a>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link slot="brand" to="/tentang">
+            <a class="nav-link nav-link-icon" rel="noopener">
+              Tentang
+              <!-- <i class="fa fa-github"></i>
+              <span class="nav-link-inner--text d-lg-none">Github</span>-->
+            </a>
+          </router-link>
+        </li>
 
-                <!-- <li class="nav-item">
+        <!-- <li class="nav-item">
                     <router-link slot="brand" to="/tentang">
                         <a class="nav-link nav-link-icon" rel="noopener">
                             <i class="fa fa-instagram"></i>
@@ -134,8 +132,8 @@
                             <span class="nav-link-inner--text d-lg-none">Github</span>
                         </a>
                     </router-link>
-                </li>-->
-                <!-- <li class="nav-item d-none d-lg-block ml-lg-4">
+        </li>-->
+        <!-- <li class="nav-item d-none d-lg-block ml-lg-4">
                     <a
                         href="https://www.creative-tim.com/product/vue-argon-design-system"
                         target="_blank"
@@ -147,10 +145,10 @@
                         </span>
                         <span class="nav-link-inner--text">Download</span>
                     </a>
-                </li>-->
-            </ul>
-        </base-nav>
-    </header>
+        </li>-->
+      </ul>
+    </base-nav>
+  </header>
 </template>
 <script>
 import BaseNav from "@/components/BaseNav";
@@ -158,11 +156,11 @@ import BaseDropdown from "@/components/BaseDropdown";
 import CloseButton from "@/components/CloseButton";
 
 export default {
-    components: {
-        BaseNav,
-        CloseButton,
-        BaseDropdown
-    }
+  components: {
+    BaseNav,
+    CloseButton,
+    BaseDropdown
+  }
 };
 </script>
 <style>
