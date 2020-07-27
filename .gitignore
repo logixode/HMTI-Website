@@ -21,4 +21,4 @@ yarn-error.log*
 *.sw*
 
 # wp sites
-/wp-admin
+wp-admin
