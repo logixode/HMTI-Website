@@ -48,7 +48,6 @@ export default {
         .get(`wp/v2/posts?categories=29&per_page=3&page=${page}`)
         .then(async response => {
           let data = await response.data;
-          console.log(data);
 
           let regexp = /<iframe[^>]*>/g;
           let url = [],
