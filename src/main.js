@@ -27,7 +27,11 @@ Vue.use(VueResource);
 Vue.use(Argon);
 Vue.use(axios);
 
-axios.defaults.baseURL = 'http://localhost/index.php/wp-json/';
+// local site
+// axios.defaults.baseURL = 'http://localhost/index.php/wp-json/';
+
+// hosting site
+axios.defaults.baseURL = 'https://hmti-admin.000webhostapp.com/index.php/wp-json/';
 
 Vue.mixin({
   data: () => ({
