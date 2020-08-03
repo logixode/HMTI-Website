@@ -43,7 +43,7 @@
           </card>
           <card
             shadow
-            class="shadow-lg--hover mb-3 coming-soon-badge"
+            class="shadow-lg--hover mb-3"
             v-show="!loading"
             v-for="(post, i) in posts"
             :key="i"
@@ -181,7 +181,7 @@ export default {
   width: 180px;
   padding: 10px 0;
   background-color: #f32929e8;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.192);
+  box-shadow: 0 1px 10px #1a254965;
   color: #fff;
   text-align: center;
 }
