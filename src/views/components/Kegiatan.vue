@@ -43,11 +43,14 @@
           </card>
           <card
             shadow
-            class="shadow-lg--hover mb-3"
+            class="shadow-lg--hover mb-3 coming-soon-badge"
             v-show="!loading"
-            v-for="(post, i) in sortArrays(posts)"
+            v-for="(post, i) in posts"
             :key="i"
           >
+            <div class="ribbon" v-if="filterComingSoonDate(post.acf.date_coming)">
+              <span class="ribbon__content">Coming Soon</span>
+            </div>
             <div class="row">
               <div class="col-md-4 img-post">
                 <img v-if="img[i] != null" v-lazy="img[i][1]" alt />
@@ -56,6 +59,7 @@
               </div>
               <div class="col-md-8 pl-4 overflow-hidden">
                 <h5 class="title text-success mt-2">{{ post.title.rendered }}</h5>
+                {{ filterComingSoonDate(post.acf.date_coming) }}
                 <small>{{ getFullDate(date[i].day, date[i].date, date[i].month, date[i].year) }}</small>
                 <div class="clamp-2" v-html="post.content.rendered"></div>
               </div>
@@ -69,6 +73,7 @@
 <script>
 import axios from "axios";
 import { ContentLoader } from "vue-content-loader";
+import { log } from "util";
 
 export default {
   components: {
@@ -86,13 +91,14 @@ export default {
   created() {
     this.getData();
     this.loading = true;
+    this.filterComingSoonDate();
   },
   methods: {
     getData() {
       axios
         .get(`wp/v2/posts?categories=30`)
         .then(async (response) => {
-          let data = await response.data;
+          let data = await this.sortArrays(response.data);
 
           let regexp = /<img[^>]+src\s*=\s*['"]([^'"]+)['"][^>]*>/g;
           let url = [],
@@ -144,10 +150,42 @@ export default {
         .slice()
         .sort((a, b) => (a.acf.date_coming < b.acf.date_coming ? 1 : -1));
     },
+    filterComingSoonDate(value) {
+      let date = new Date(value).getTime();
+      let todayDate = Date.now();
+
+      return date > todayDate ? true : false;
+      // return new Date(value).toISOString();
+    },
   },
 };
 </script>
 <style scoped>
+.ribbon {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-top-right-radius: 5px;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+}
+.ribbon__content {
+  font-size: 13px;
+  left: -49px;
+  top: 18px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 10px 0;
+  background-color: #f32929e8;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.192);
+  color: #fff;
+  text-align: center;
+}
 .img-post img {
   width: 100px;
   height: 100px;
