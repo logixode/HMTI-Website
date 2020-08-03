@@ -59,7 +59,6 @@
               </div>
               <div class="col-md-8 pl-4 overflow-hidden">
                 <h5 class="title text-success mt-2">{{ post.title.rendered }}</h5>
-                {{ filterComingSoonDate(post.acf.date_coming) }}
                 <small>{{ getFullDate(date[i].day, date[i].date, date[i].month, date[i].year) }}</small>
                 <div class="clamp-2" v-html="post.content.rendered"></div>
               </div>
