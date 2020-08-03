@@ -162,24 +162,23 @@ export default {
 </script>
 <style scoped>
 .ribbon {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   overflow: hidden;
-  border-top-right-radius: 5px;
   position: absolute;
   top: -1px;
   right: -1px;
 }
 .ribbon__content {
   font-size: 13px;
-  left: -49px;
-  top: 18px;
+  left: -16px;
+  top: 17px;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   position: absolute;
   display: block;
-  width: 225px;
+  width: 180px;
   padding: 10px 0;
   background-color: #f32929e8;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.192);
