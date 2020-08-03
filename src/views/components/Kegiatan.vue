@@ -45,7 +45,7 @@
             shadow
             class="shadow-lg--hover mb-3"
             v-show="!loading"
-            v-for="(post, i) in posts"
+            v-for="(post, i) in sortArrays(posts)"
             :key="i"
           >
             <div class="row">
@@ -72,7 +72,7 @@ import { ContentLoader } from "vue-content-loader";
 
 export default {
   components: {
-    ContentLoader
+    ContentLoader,
   },
   data() {
     return {
@@ -80,7 +80,7 @@ export default {
       posts: [],
       date: [],
       img: [],
-      error: null
+      error: null,
     };
   },
   created() {
@@ -91,7 +91,7 @@ export default {
     getData() {
       axios
         .get(`wp/v2/posts?categories=30`)
-        .then(async response => {
+        .then(async (response) => {
           let data = await response.data;
 
           let regexp = /<img[^>]+src\s*=\s*['"]([^'"]+)['"][^>]*>/g;
@@ -110,13 +110,13 @@ export default {
             content.push(url[i].replace(/<figure .*?figure>\n\n\n\n/g, ""));
             data[i].content.rendered = content[i];
 
-            //   // get date
+            // get date
             date.push(new Date(Date.parse(data[i].acf.date_coming)));
             this.date[i] = {
               day: date[i].getDay(),
               date: date[i].getDate(),
               month: date[i].getMonth(),
-              year: date[i].getFullYear()
+              year: date[i].getFullYear(),
             };
             // mengganti isi categories(id) dengan value name
             // data[i].categories = data[i].categories.map(value => {
@@ -133,13 +133,18 @@ export default {
 
           this.loading = false;
         })
-        .catch(error => {
+        .catch((error) => {
           this.error = error.response.data;
           this.loading = false;
           // console.log(error.response.data);
         });
-    }
-  }
+    },
+    sortArrays(arrays) {
+      return arrays
+        .slice()
+        .sort((a, b) => (a.acf.date_coming < b.acf.date_coming ? 1 : -1));
+    },
+  },
 };
 </script>
 <style scoped>
