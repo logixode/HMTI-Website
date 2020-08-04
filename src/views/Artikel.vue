@@ -151,7 +151,7 @@ export default {
             await img.push(src[i]);
 
             // menghapus tag figure image didalam content
-            content.push(url[i].replace(/<figure .*?figure>\n\n\n\n/g, ""));
+            content.push(url[i].replace(/<figure .*?figure>/g, ""));
             data[i].content.rendered = content[i];
 
             // get date
