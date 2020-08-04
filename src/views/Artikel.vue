@@ -46,7 +46,7 @@
             <!-- <div class="mt-3 py-3 border-top"> -->
             <!-- <div class="artikel" > -->
 
-            <router-link :to="`/artikel/${post.id}`">
+            <router-link :to="`/artikel/${post.slug}`">
               <div class="row">
                 <div class="col-sm-4 col-md-2 img-post">
                   <img v-if="img[i] != null" v-lazy="img[i][1]" alt />
@@ -146,9 +146,9 @@ export default {
             tags = [];
 
           for (let i = 0; i < data.length; i++) {
-            url.push(data[i].content.rendered);
-            src.push(regexp.exec(url[i]));
-            img.push(src[i]);
+            await url.push(data[i].content.rendered);
+            await src.push(regexp.exec(url[i]));
+            await img.push(src[i]);
 
             // menghapus tag figure image didalam content
             content.push(url[i].replace(/<figure .*?figure>\n\n\n\n/g, ""));

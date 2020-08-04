@@ -35,27 +35,20 @@
             </div>
           </div>
         </card>
-
-        <card shadow no-body class="px-4 px-md-5 mt-3 py-4">
-          <div class="comments">
-            <Disqus shortname="hmti-poliwangi" :pageConfig="pageConfig" />
-          </div>
-        </card>
       </div>
     </section>
   </div>
 </template>
+
 <script>
 import ComponentsHeader from "./components/ComponentsHeader";
 import axios from "axios";
 import ContentLoaderPost from "./components/ContentLoaderPost";
-import { Disqus } from "vue-disqus";
 
 export default {
   components: {
     ComponentsHeader,
     ContentLoaderPost,
-    Disqus,
   },
   data() {
     return {
@@ -69,11 +62,6 @@ export default {
       tags: [],
       error: null,
       slug: this.$route.params.slug,
-
-      pageConfig: {
-        url: document.baseURI,
-        identifier: this.$route.path,
-      },
     };
   },
   watch: {
@@ -112,7 +100,6 @@ export default {
           );
 
           this.post = response.data[0];
-          // console.log(this.posts);
           this.loading = false;
         })
         .catch((error) => {
@@ -126,8 +113,6 @@ export default {
   },
 };
 </script>
+
 <style>
-figure {
-  text-align: center;
-}
 </style>

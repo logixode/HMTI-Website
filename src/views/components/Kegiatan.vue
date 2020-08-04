@@ -43,26 +43,28 @@
           </card>
           <card
             shadow
-            class="shadow-lg--hover mb-3"
+            class="shadow-lg--hover item-hover mb-3"
             v-show="!loading"
             v-for="(post, i) in posts"
             :key="i"
           >
-            <div class="ribbon" v-if="filterComingSoonDate(post.acf.date_coming)">
-              <span class="ribbon__content">Coming Soon</span>
-            </div>
-            <div class="row">
-              <div class="col-md-4 img-post">
-                <img v-if="img[i] != null" v-lazy="img[i][1]" alt />
-                <img v-else v-lazy="'img/brand/hmti.png'" alt />
-                <!--  <icon name="ni ni-satisfied" gradient="success" color="white" shadow rounded></icon> -->
+            <router-link :to="`/kegiatan/${post.slug}`">
+              <div class="ribbon" v-if="filterComingSoonDate(post.acf.date_coming)">
+                <span class="ribbon__content">Coming Soon</span>
               </div>
-              <div class="col-md-8 pl-4 overflow-hidden">
-                <h5 class="title text-success mt-2">{{ post.title.rendered }}</h5>
-                <small>{{ getFullDate(date[i].day, date[i].date, date[i].month, date[i].year) }}</small>
-                <div class="clamp-2" v-html="post.content.rendered"></div>
+              <div class="row">
+                <div class="col-md-4 img-post">
+                  <img v-if="img[i] != null" v-lazy="img[i][1]" alt />
+                  <img v-else v-lazy="'img/brand/hmti.png'" alt />
+                  <!--  <icon name="ni ni-satisfied" gradient="success" color="white" shadow rounded></icon> -->
+                </div>
+                <div class="col-md-8 pl-4 overflow-hidden">
+                  <h5 class="title text-success mt-2">{{ post.title.rendered }}</h5>
+                  <small>{{ getFullDate(date[i].day, date[i].date, date[i].month, date[i].year) }}</small>
+                  <div class="clamp-2" v-html="post.content.rendered"></div>
+                </div>
               </div>
-            </div>
+            </router-link>
           </card>
         </div>
       </div>
