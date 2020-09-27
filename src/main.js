@@ -31,7 +31,7 @@ Vue.use(axios);
 // axios.defaults.baseURL = 'http://localhost/index.php/wp-json/';
 
 // hosting site
-axios.defaults.baseURL = 'https://hmti-admin.000webhostapp.com/index.php/wp-json/';
+axios.defaults.baseURL = 'https://hmti.poliwangi.ac.id/wp/wp-json/';
 
 Vue.mixin({
   data: () => ({

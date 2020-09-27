@@ -9,29 +9,26 @@
               <content-loader-post></content-loader-post>
             </div>
             <div class="mt-1 mt-md-3 py-3" v-else>
-              <div class="text-center py-5" v-if="error != null">
-                <h1 class="display-1">ERROR {{ error.data.status }}</h1>
-                <h4>- {{ error.message }} -</h4>
-              </div>
-              <div v-show="error == null">
-                <div class="row">
-                  <div class="col-md-6">
-                    <h2>{{ post.title.rendered }}</h2>
-                  </div>
-                  <div class="col-md-6 text-right">
-                    <small>{{ getFullDate(date.day, date.date, date.month, date.year) }}</small>
-                  </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <h2>{{ post.title.rendered }}</h2>
                 </div>
-                <div class>
-                  <span
-                    class="badge text-unset badge-pill badge-primary"
-                    v-for="(tag,j) in post.tags"
-                    :key="j"
-                  >{{ tag }}</span>
+                <div class="col-md-6 text-right">
+                  <small>{{
+                    getFullDate(date.day, date.date, date.month, date.year)
+                  }}</small>
                 </div>
-                <hr />
-                <div class="text-gray" v-html="post.content.rendered"></div>
               </div>
+              <div class>
+                <span
+                  class="badge text-unset badge-pill badge-primary"
+                  v-for="(tag, j) in post.tags"
+                  :key="j"
+                  >{{ tag }}</span
+                >
+              </div>
+              <hr />
+              <div class="text-gray" v-html="post.content.rendered"></div>
             </div>
           </div>
         </card>
@@ -102,10 +99,8 @@ export default {
           this.post = response.data[0];
           this.loading = false;
         })
-        .catch((error) => {
-          this.error = error.response.data;
-          console.log(error);
-
+        .catch(() => {
+          this.$router.push({ name: "404" });
           // console.log(error.response.data);
           this.loading = false;
         });

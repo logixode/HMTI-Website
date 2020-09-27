@@ -27,7 +27,7 @@
         <javascript-components></javascript-components>
         <icons></icons>
         <examples></examples>
-    <download-section></download-section>-->
+      <download-section></download-section>-->
   </div>
 </template>
 <script>
@@ -63,8 +63,8 @@ export default {
     YoutubeEmbed,
     VisiMisi,
     Prestasi,
-    Kegiatan
-  }
+    Kegiatan,
+  },
 };
 </script>
 <style>

@@ -2,6 +2,8 @@ import Vue from "vue";
 import Router from "vue-router";
 import AppHeader from "./layout/AppHeader";
 import AppFooter from "./layout/AppFooter";
+import NotFound from "./views/components/NotFound.vue";
+import ComingSoon from "./views/components/ComingSoon.vue";
 import Index from "./views/Index.vue";
 import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
@@ -15,7 +17,7 @@ import ArtikelPage from "./views/ArtikelPage.vue";
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   linkExactActiveClass: "active",
   routes: [
     {
@@ -26,6 +28,34 @@ export default new Router({
         default: Index,
         footer: AppFooter
       }
+    },
+    {
+      path: "*",
+      name: "404",
+      components: {
+        header: AppHeader,
+        default: NotFound,
+        footer: AppFooter
+      }
+    },
+    {
+      path: "/comingsoon",
+      name: "comingsoon",
+      components: {
+        default: () => {
+          localStorage.setItem("isMaintenance", true);
+        }
+      },
+      children: [
+        {
+          path: "false",
+          components: {
+            default: () => {
+              localStorage.setItem("isMaintenance", false);
+            }
+          }
+        }
+      ]
     },
     {
       path: "/landing",
@@ -117,3 +147,5 @@ export default new Router({
     }
   }
 });
+
+export default router;

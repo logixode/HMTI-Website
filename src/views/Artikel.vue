@@ -146,9 +146,9 @@ export default {
             tags = [];
 
           for (let i = 0; i < data.length; i++) {
-            await url.push(data[i].content.rendered);
-            await src.push(regexp.exec(url[i]));
-            await img.push(src[i]);
+            url.push(data[i].content.rendered);
+            src.push(regexp.exec(url[i]));
+            img.push(src[i]);
 
             // menghapus tag figure image didalam content
             content.push(url[i].replace(/<figure .*?figure>/g, ""));
