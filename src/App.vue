@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <coming-soon v-if="isMaintenance == 'true'" />
-    <template v-if="isMaintenance == 'false'">
+    <template v-if="isMaintenance == 'true'">
       <router-view name="header"></router-view>
       <main>
         <fade-transition origin="center" mode="out-in" :duration="250">
@@ -10,6 +9,7 @@
       </main>
       <router-view name="footer"></router-view>
     </template>
+    <coming-soon v-else />
   </div>
 </template>
 <script>

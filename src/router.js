@@ -3,7 +3,6 @@ import Router from "vue-router";
 import AppHeader from "./layout/AppHeader";
 import AppFooter from "./layout/AppFooter";
 import NotFound from "./views/components/NotFound.vue";
-import ComingSoon from "./views/components/ComingSoon.vue";
 import Index from "./views/Index.vue";
 import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
@@ -18,6 +17,8 @@ import ArtikelPage from "./views/ArtikelPage.vue";
 Vue.use(Router);
 
 const router = new Router({
+  mode: "history",
+  base: process.env.BASE_URL,
   linkExactActiveClass: "active",
   routes: [
     {
@@ -44,6 +45,7 @@ const router = new Router({
       components: {
         default: () => {
           localStorage.setItem("isMaintenance", true);
+
         }
       },
       children: [
