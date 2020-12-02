@@ -3,9 +3,9 @@
     <main-index></main-index>
     <div class="container mb-5"></div>
 
-    <visi-misi></visi-misi>
-    <prestasi></prestasi>
-    <section class="section section section-shaped my-0 overflow-hidden">
+    <visi-misi class="mb-5"></visi-misi>
+    <!-- <prestasi></prestasi> -->
+    <section class="section section section-shaped my-0 pt-0 overflow-hidden">
       <div class="shape shape-style-1 bg-gradient-warning shape-skew">
         <span></span>
         <span></span>
@@ -18,7 +18,7 @@
     </section>
 
     <br />
-    <youtube-embed></youtube-embed>
+    <youtube-embed class="my-5"></youtube-embed>
     <!-- <hero></hero> -->
     <!-- <basic-elements></basic-elements>
         <inputs></inputs>

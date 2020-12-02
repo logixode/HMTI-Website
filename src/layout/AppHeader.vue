@@ -1,19 +1,23 @@
 <template>
   <header class="header-global">
     <base-nav class="navbar-main" transparent type effect="light" expand>
-      <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
+      <router-link
+        slot="brand"
+        class="navbar-brand mr-lg-5 pt-2 pt-lg-1"
+        to="/"
+      >
         <img src="img/brand/hmti.png" alt="logo" />
         <b class="h6 text-white font-weight-bold">HMTI POLIWANGI</b>
       </router-link>
 
-      <div class="row" slot="content-header" slot-scope="{closeMenu}">
+      <!-- <div class="row" slot="content-header" slot-scope="{ closeMenu }">
         <div class="col-6 collapse-brand">
           <h5>Navigasi Menu</h5>
         </div>
         <div class="col-6 collapse-close">
           <close-button @click="closeMenu"></close-button>
         </div>
-      </div>
+      </div> -->
 
       <!-- <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
                 <base-dropdown class="nav-item" menu-classes="dropdown-menu-xl">
@@ -72,40 +76,38 @@
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
         <li class="nav-item">
           <router-link slot="brand" to="/">
-            <a class="nav-link nav-link-icon" rel="noopener">
-              <!-- <i class="fa fa-facebook-square"></i>
-              <span class="nav-link-inner--text d-lg-none">Facebook</span>-->
-              Beranda
-            </a>
+            <a class="nav-link nav-link-icon" rel="noopener"> Beranda </a>
           </router-link>
         </li>
+        <template v-if="$route.path == '/'">
+          <li class="nav-item">
+            <router-link slot="brand" to="/#tujuan">
+              <a class="nav-link nav-link-icon" rel="noopener"> Tujuan </a>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link slot="brand" to="/#visi-misi">
+              <a class="nav-link nav-link-icon" rel="noopener"> Visi & Misi </a>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link slot="brand" to="/#kegiatan">
+              <a class="nav-link nav-link-icon" rel="noopener"> Kegiatan </a>
+            </router-link>
+          </li>
+        </template>
         <li class="nav-item">
           <router-link slot="brand" to="/artikel">
-            <a class="nav-link nav-link-icon" rel="noopener">
-              Artikel
-              <!-- <i class="fa fa-instagram"></i>
-              <span class="nav-link-inner--text d-lg-none">Instagram</span>-->
-            </a>
+            <a class="nav-link nav-link-icon" rel="noopener"> Artikel </a>
           </router-link>
         </li>
-        <li class="nav-item">
-          <router-link slot="brand" to="/kegiatan">
-            <a class="nav-link nav-link-icon" rel="noopener">
-              Kegiatan
-              <!-- <i class="fa fa-twitter-square"></i>
-              <span class="nav-link-inner--text d-lg-none">Twitter</span>-->
-            </a>
-          </router-link>
-        </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <router-link slot="brand" to="/prestasi">
             <a class="nav-link nav-link-icon" rel="noopener">
               Prestasi & Produk
-              <!-- <i class="fa fa-github"></i>
-              <span class="nav-link-inner--text d-lg-none">Github</span>-->
             </a>
           </router-link>
-        </li>
+        </li> -->
         <li class="nav-item">
           <router-link slot="brand" to="/tentang">
             <a class="nav-link nav-link-icon" rel="noopener">
@@ -159,8 +161,8 @@ export default {
   components: {
     BaseNav,
     CloseButton,
-    BaseDropdown
-  }
+    BaseDropdown,
+  },
 };
 </script>
 <style>

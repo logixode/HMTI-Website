@@ -1,15 +1,15 @@
 <template>
-  <div class="container py-0">
-    <div class="text-center mb-4 text-uppercase">
-      <h2 class="text-white page-title">Kegiatan</h2>
+  <div class="container py-5" id="kegiatan">
+    <div class="text-center mb-5 text-uppercase">
+      <h2 class="text-white page-title">Kegiatan HMTI</h2>
     </div>
     <div class="row align-items-center">
-      <div class="col-md-7 order-lg-1 ml-lg-auto">
+      <div class="col-md-6 order-lg-1 ml-lg-auto">
         <div class="position-relative">
           <img src="img/events.svg" class="img-center img-fluid" />
         </div>
       </div>
-      <div class="col-lg-5 order-lg-2">
+      <div class="col-lg-6 order-lg-2">
         <!-- <div class="d-flex px-3 pb-2">
           <div>
             <icon
@@ -24,11 +24,10 @@
         </div>-->
         <div class="scrollable-card px-3">
           <card
-            shadow
-            class="card-profile my-3"
+            class="shadow-sm card-profile my-3"
             no-body
             v-for="i in 3"
-            :key="'loader'+i"
+            :key="'loader' + i"
             v-show="loading"
           >
             <div class="px-4 pt-3 pb-2">
@@ -42,25 +41,46 @@
             </div>
           </card>
           <card
-            shadow
-            class="shadow-lg--hover item-hover mb-3"
+            class="shadow-sm shadow--hover item-hover mb-3"
             v-show="!loading"
             v-for="(post, i) in posts"
             :key="i"
           >
             <router-link :to="`/kegiatan/${post.slug}`">
-              <div class="ribbon" v-if="filterComingSoonDate(post.acf.date_coming)">
+              <div
+                class="ribbon"
+                v-if="filterComingSoonDate(post.acf.date_coming)"
+              >
                 <span class="ribbon__content">Coming Soon</span>
               </div>
-              <div class="row">
-                <div class="col-md-4 img-post">
-                  <img v-if="img[i] != null" v-lazy="img[i][1]" alt />
-                  <img v-else v-lazy="'img/brand/hmti.png'" alt />
+              <div class="row pl-lg-2 pt-2">
+                <div class="col-md-4 img-post p-0">
+                  <img
+                    v-if="img[i] != null"
+                    v-lazy="img[i][1]"
+                    class="w-full"
+                    alt
+                  />
+                  <img
+                    v-else
+                    v-lazy="'img/brand/hmti.png'"
+                    class="w-full"
+                    alt
+                  />
                   <!--  <icon name="ni ni-satisfied" gradient="success" color="white" shadow rounded></icon> -->
                 </div>
                 <div class="col-md-8 pl-4 overflow-hidden">
-                  <h5 class="title text-success mt-2">{{ post.title.rendered }}</h5>
-                  <small>{{ getFullDate(date[i].day, date[i].date, date[i].month, date[i].year) }}</small>
+                  <h5 class="title text-title mt-2">
+                    {{ post.title.rendered }}
+                  </h5>
+                  <small>{{
+                    getFullDate(
+                      date[i].day,
+                      date[i].date,
+                      date[i].month,
+                      date[i].year
+                    )
+                  }}</small>
                   <div class="clamp-2" v-html="post.content.rendered"></div>
                 </div>
               </div>
@@ -162,6 +182,13 @@ export default {
 };
 </script>
 <style scoped>
+a,
+a:hover {
+  color: #32325d;
+}
+a small {
+  color: #747477;
+}
 .ribbon {
   width: 110px;
   height: 110px;
@@ -185,11 +212,12 @@ export default {
   box-shadow: 0 1px 10px #1a254965;
   color: #fff;
   text-align: center;
+  z-index: 99;
 }
-.img-post img {
-  width: 100px;
-  height: 100px;
-}
+/* .img-post img {
+  width: 100%;
+  height: 100%;
+} */
 .scrollable-card {
   height: 550px;
   overflow-y: scroll;

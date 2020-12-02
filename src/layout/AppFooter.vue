@@ -12,7 +12,10 @@
               <p class="mb-1 font-weight-bold">
                 Himpunan Mahasiswa Teknik Informatika
               </p>
-              <p class="mb-1">Kecamatan Kabat, Kabupaten Banyuwangi</p>
+              <p class="mb-1">
+                Kesekretariatan HMTI, Gedung Kuning, Politeknik Negeri
+                Banyuwangi
+              </p>
 
               <i class="fa fa-envelope">&nbsp;</i>
               <a href="mailto:hmti@poliwangi.ac.id">hmti@poliwangi.ac.id</a>
@@ -29,7 +32,7 @@
                 rel="noopener"
                 href="https://www.instagram.com/tipoliwangi/"
               >
-                <button class="btn btn-neutral btn-instagram btn-round">
+                <button class="btn btn-neutral btn-instagram btn-round w-100">
                   <i class="fa fa-instagram"></i> @tipoliwangi
                 </button>
               </a>
@@ -38,7 +41,9 @@
                 rel="noopener"
                 href="https://www.youtube.com/channel/UCq769ou-Gy0z5b8Nzgv4kfg"
               >
-                <button class="btn btn-neutral btn-youtube btn-round mt-2">
+                <button
+                  class="btn btn-neutral btn-youtube btn-round mt-2 w-100"
+                >
                   <i class="fa fa-youtube">&nbsp;</i> TIPOLIWANGI TV
                 </button>
               </a>
@@ -55,11 +60,13 @@
         <div class="row align-items-center justify-content-md-between">
           <div class="col-md-6">
             <div class="copyright">
-              &copy; {{ year }}
-              <a href="/" rel="noopener">Software Developer of HMTI</a> | Made
-              with
-              <a href="https://vuejs.org" target="_blank" rel="noopener"
-                >Vue.js</a
+              <span>
+                &copy; {{ year }}
+                <a href="/" rel="noopener">Software Developer of HMTI</a> | Made
+                with
+                <a href="https://vuejs.org" target="_blank" rel="noopener"
+                  >Vue.js</a
+                ></span
               >
             </div>
           </div>
@@ -145,10 +152,11 @@ footer {
 }
 
 footer a {
-  color: #bbb !important;
+  color: #c8c8c8 !important;
 }
 
+.copyright span,
 footer a:hover {
-  color: #888888 !important;
+  color: #7a7a7a !important;
 }
 </style>

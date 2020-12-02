@@ -28,3 +28,11 @@ export default {
   },
 };
 </script>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+.text-title {
+  color: #64b0f8;
+}
+</style>

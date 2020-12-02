@@ -3,7 +3,7 @@
     <components-header></components-header>
     <section class="section section-skew mt--150">
       <div class="container">
-        <card shadow class="card-profile mt--400" no-body>
+        <card shadow-sm class="card-profile mt--400" no-body>
           <div class="px-4 px-md-5">
             <div class="py-3 border-top" v-if="loading">
               <content-loader-post></content-loader-post>
