@@ -36,7 +36,7 @@ export default {
   mounted() {
     window.addEventListener("scroll", (e) => {
       // this.scrollCondition =
-      if (e.target.scrollingElement.scrollTop > 400) {
+      if (e.target.scrollingElement.scrollTop > 160) {
         this.scrollCondition = true;
       } else this.scrollCondition = false;
       console.log();

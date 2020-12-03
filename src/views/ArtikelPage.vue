@@ -3,7 +3,26 @@
     <components-header></components-header>
     <section class="section section-skew mt--150">
       <div class="container">
-        <card shadow-sm class="card-profile mt--400" no-body>
+        <card
+          shadow-sm
+          class="card-profile mt--450 mb-3 px-3 py-2 breadcrumb-card"
+          no-body
+        >
+          <div class="flex">
+            <span class="">
+              <router-link to="/">Beranda</router-link
+              ><span>&nbsp;/&nbsp;</span>
+            </span>
+            <span class="" v-for="(item, i) in breadcrumb" :key="i">
+              <template v-if="i != 1">
+                <router-link :to="'/' + item">{{ item }}</router-link>
+                <span>&nbsp;/&nbsp;</span>
+              </template>
+              <span v-else>{{ item }}</span>
+            </span>
+          </div>
+        </card>
+        <card shadow-sm class="card-profile" no-body>
           <div class="px-4 px-md-5">
             <div class="py-3 border-top" v-if="loading">
               <content-loader-post></content-loader-post>
@@ -71,6 +90,7 @@ export default {
         url: document.baseURI,
         identifier: this.$route.path,
       },
+      breadcrumb: [],
     };
   },
   watch: {
@@ -81,6 +101,10 @@ export default {
   mounted() {
     this.getTags();
     this.getData(this.slug);
+    let arr = this.$route.path.split("/");
+    arr.shift();
+    this.breadcrumb = arr;
+    console.log(this.breadcrumb);
   },
   methods: {
     async getData(slug) {
@@ -122,7 +146,15 @@ export default {
 };
 </script>
 <style>
+.breadcrumb-card a {
+  /* font-weight: 500; */
+}
 figure {
   text-align: center;
+}
+</style>
+<style scoped>
+p {
+  margin-top: 10px !important;
 }
 </style>

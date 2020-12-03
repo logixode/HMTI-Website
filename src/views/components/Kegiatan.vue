@@ -70,9 +70,12 @@
                   <!--  <icon name="ni ni-satisfied" gradient="success" color="white" shadow rounded></icon> -->
                 </div>
                 <div class="col-md-8 pl-4 overflow-hidden">
-                  <h5 class="title text-title mt-2">
-                    {{ post.title.rendered }}
-                  </h5>
+                  <div class="clamp-2">
+                    <h5
+                      class="title text-title mt-2"
+                      v-html="post.title.rendered"
+                    ></h5>
+                  </div>
                   <small>{{
                     getFullDate(
                       date[i].day,
@@ -135,8 +138,9 @@ export default {
             // console.log(regexp.exec(url[i]));
 
             // menghapus tag figure image didalam content
-            content.push(url[i].replace(/<figure .*?figure>/g, ""));
+            content.push(url[i].replace(/<figure .*?<\/figure>/g, ""));
             data[i].content.rendered = content[i];
+            // console.log(content[i]);
 
             // get date
             date.push(new Date(Date.parse(data[i].acf.date_coming)));
@@ -182,6 +186,15 @@ export default {
   },
 };
 </script>
+<style>
+.clamp-2 ul,
+.clamp-2 ol {
+  visibility: hidden;
+  height: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+</style>
 <style scoped>
 a,
 a:hover {

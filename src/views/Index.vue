@@ -74,7 +74,8 @@ export default {
 .page-title {
   letter-spacing: 5px;
 }
-.clamp-2 p {
+.clamp-2 p,
+.clamp-2 h5 {
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
