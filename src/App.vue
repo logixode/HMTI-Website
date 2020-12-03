@@ -10,21 +10,37 @@
       <router-view name="footer"></router-view>
     </template>
     <coming-soon v-else />
+    <fade-transition origin="center" mode="out-in" :duration="250">
+      <scroll-to-top v-show="scrollCondition" />
+    </fade-transition>
   </div>
 </template>
 <script>
 import { FadeTransition } from "vue2-transitions";
 import ComingSoon from "./views/components/ComingSoon";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default {
   components: {
-    ComingSoon,
+    ScrollToTop,
     FadeTransition,
   },
+  data: () => ({
+    scrollCondition: 0,
+  }),
   computed: {
     isMaintenance() {
       return localStorage.getItem("isMaintenance") || false;
     },
+  },
+  mounted() {
+    window.addEventListener("scroll", (e) => {
+      // this.scrollCondition =
+      if (e.target.scrollingElement.scrollTop > 400) {
+        this.scrollCondition = true;
+      } else this.scrollCondition = false;
+      console.log();
+    });
   },
 };
 </script>

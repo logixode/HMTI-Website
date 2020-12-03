@@ -53,7 +53,7 @@
               >
                 <span class="ribbon__content">Coming Soon</span>
               </div>
-              <div class="row pl-lg-2 pt-2">
+              <div class="row pl-lg-3 pl-md-2">
                 <div class="col-md-4 img-post p-0">
                   <img
                     v-if="img[i] != null"
@@ -132,9 +132,10 @@ export default {
             url.push(data[i].content.rendered);
             src.push(regexp.exec(url[i]));
             img.push(src[i]);
+            // console.log(regexp.exec(url[i]));
 
             // menghapus tag figure image didalam content
-            content.push(url[i].replace(/<figure .*?figure>\n\n\n\n/g, ""));
+            content.push(url[i].replace(/<figure .*?figure>/g, ""));
             data[i].content.rendered = content[i];
 
             // get date

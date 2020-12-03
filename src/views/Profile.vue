@@ -13,7 +13,9 @@
                   </a>
                 </div>
               </div>
-              <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+              <div
+                class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center"
+              >
                 <!-- <div class="card-profile-actions py-4 mt-lg-0">
                                     <base-button type="info" size="sm" class="mr-4">Connect</base-button>
                                     <base-button
@@ -49,25 +51,27 @@
                 >, 27</span>-->
               </h3>
               <div>
-                <i class="ni education_hat mr-2"></i>Politeknik Negeri Banyuwangi
+                <i class="ni education_hat mr-2"></i>Politeknik Negeri
+                Banyuwangi
               </div>
             </div>
             <hr />
-            <div class="text-center">
-              <div class="row justify-content-center">
-                <div class="col-lg-10">
-                  <div class="py-3 border-top" v-if="loading">
-                    <content-loader-post></content-loader-post>
-                  </div>
+            <div class="row justify-content-center">
+              <div class="col-lg-10">
+                <div class="py-3 text-center border-top" v-if="loading">
+                  <content-loader-post></content-loader-post>
+                </div>
 
-                  <div class="mt-1 mt-md-3 py-3" v-else>
-                    <div class="text-center py-5" v-if="error != null">
-                      <h1 class="display-1">ERROR {{ error.data.status }}</h1>
-                      <h4>- {{ error.message }} -</h4>
-                    </div>
-                    <div v-show="error == null">
-                      <div class="text-gray" v-html="profile[0].content.rendered"></div>
-                    </div>
+                <div class="mt-1 mt-md-3 py-3" v-else>
+                  <div class="text-center py-5" v-if="error != null">
+                    <h1 class="display-1">ERROR {{ error.data.status }}</h1>
+                    <h4>- {{ error.message }} -</h4>
+                  </div>
+                  <div class="text-center" v-show="error == null">
+                    <div
+                      class="text-gray"
+                      v-html="profile[0].content.rendered"
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -119,6 +123,17 @@ export default {
   },
 };
 </script>
+<style>
+.wp-block-columns {
+  display: flex;
+}
+.wp-block-column {
+  flex: 1;
+}
+.wp-block-column img {
+  width: 100%;
+}
+</style>
 <style scoped>
 .profile-page .card-profile .card-profile-image img {
   box-shadow: unset !important;

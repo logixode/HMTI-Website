@@ -6,7 +6,7 @@
         class="navbar-brand mr-lg-5 pt-2 pt-lg-1"
         to="/"
       >
-        <img src="img/brand/hmti.png" alt="logo" />
+        <img src="img/brand/hmti.png" />
         <b class="h6 text-white font-weight-bold">HMTI POLIWANGI</b>
       </router-link>
 
